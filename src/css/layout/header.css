@@ -1,0 +1,74 @@
+.header {
+
+position:absolute;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+z-index:10;
+
+}
+
+
+.header__container {
+
+height:88px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+}
+
+
+.logo {
+
+font-size:28px;
+
+font-weight:700;
+
+letter-spacing:-0.05em;
+
+}
+
+
+.nav {
+
+display:none;
+
+}
+
+
+.menu-button {
+
+font-size:24px;
+
+}
+
+
+
+@media(min-width:1024px){
+
+
+.nav {
+
+display:flex;
+
+gap:40px;
+
+}
+
+
+.menu-button {
+
+display:none;
+
+}
+
+
+}

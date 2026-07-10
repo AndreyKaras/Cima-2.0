@@ -1,0 +1,114 @@
+.problems {
+
+padding-block:
+96px;
+
+background:
+var(--color-text);
+
+color:white;
+
+}
+
+
+
+.problems .section-head__label {
+
+color:
+#93C5FD;
+
+}
+
+
+.problems .section-head__text {
+
+color:
+rgba(255,255,255,.7);
+
+}
+
+
+
+.problems__list {
+
+display:grid;
+
+gap:
+24px;
+
+}
+
+
+
+
+.problems__item {
+
+padding:
+32px;
+
+border:
+1px solid rgba(255,255,255,.15);
+
+border-radius:
+var(--radius-lg);
+
+}
+
+
+
+
+
+.problems__number {
+
+display:block;
+
+font-size:
+14px;
+
+color:
+rgba(255,255,255,.5);
+
+margin-bottom:
+32px;
+
+}
+
+
+
+
+.problems__title {
+
+font-size:
+24px;
+
+margin-bottom:
+16px;
+
+}
+
+
+
+.problems__text {
+
+color:
+rgba(255,255,255,.65);
+
+}
+
+
+
+
+
+@media(min-width:768px){
+
+
+.problems__list {
+
+grid-template-columns:
+repeat(2,1fr);
+
+}
+
+
+}
+

@@ -1,0 +1,543 @@
+.case-hero {
+
+padding:120px 0 80px;
+
+}
+
+
+
+.case-hero__label {
+
+font-size:14px;
+
+font-weight:600;
+
+letter-spacing:.12em;
+
+color:var(--color-primary);
+
+margin-bottom:24px;
+
+}
+
+
+
+.case-hero__title {
+
+font-size:clamp(44px,7vw,72px);
+
+line-height:1.05;
+
+margin-bottom:24px;
+
+}
+
+
+
+.case-hero__text {
+
+max-width:650px;
+
+font-size:20px;
+
+line-height:1.7;
+
+color:var(--color-text-secondary);
+
+margin-bottom:64px;
+
+}
+
+
+
+.case-hero__image {
+
+width:100%;
+
+aspect-ratio:16/9;
+
+object-fit:cover;
+
+border-radius:var(--radius-xl);
+
+}
+
+
+
+
+
+.case-about {
+
+padding:96px 0;
+
+}
+
+
+
+.case-grid {
+
+display:grid;
+
+gap:50px;
+
+}
+
+
+
+.case-grid h2 {
+
+font-size:42px;
+
+margin-bottom:24px;
+
+}
+
+
+
+.case-grid p {
+
+color:var(--color-text-secondary);
+
+line-height:1.7;
+
+}
+
+
+
+.case-meta {
+
+display:grid;
+
+gap:32px;
+
+}
+
+
+
+.case-meta h3 {
+
+font-size:13px;
+
+text-transform:uppercase;
+
+color:var(--color-text-secondary);
+
+margin-bottom:8px;
+
+}
+
+
+
+
+
+.case-section {
+
+padding:96px 0;
+
+}
+
+
+
+.case-section h2 {
+
+font-size:42px;
+
+margin-bottom:32px;
+
+}
+
+
+
+.case-section p {
+
+max-width:720px;
+
+font-size:18px;
+
+line-height:1.8;
+
+color:var(--color-text-secondary);
+
+}
+
+
+
+
+
+.case-before {
+
+padding:96px 0;
+
+}
+
+
+
+.before-grid {
+
+display:grid;
+
+gap:24px;
+
+}
+
+
+
+.before-grid div {
+
+padding:40px;
+
+border:1px solid var(--color-border);
+
+border-radius:var(--radius-xl);
+
+}
+
+
+
+.before-grid span {
+
+font-size:13px;
+
+font-weight:600;
+
+color:var(--color-primary);
+
+}
+
+
+
+.before-grid h3 {
+
+font-size:28px;
+
+margin:20px 0;
+
+}
+
+
+
+.before-grid p {
+
+color:var(--color-text-secondary);
+
+}
+
+
+
+
+
+.case-section--dark {
+
+background:#111;
+
+color:white;
+
+}
+
+
+
+.case-section--dark ul {
+
+display:grid;
+
+gap:20px;
+
+}
+
+
+
+.case-section--dark li {
+
+padding:24px;
+
+border:1px solid rgba(255,255,255,.15);
+
+border-radius:16px;
+
+}
+
+
+
+
+
+.case-results {
+
+padding:96px 0;
+
+}
+
+
+
+.case-results h2 {
+
+font-size:42px;
+
+margin-bottom:40px;
+
+}
+
+
+
+.results-grid {
+
+display:grid;
+
+gap:24px;
+
+}
+
+
+
+.results-grid div {
+
+padding:40px;
+
+border:1px solid var(--color-border);
+
+border-radius:var(--radius-xl);
+
+}
+
+
+
+.results-grid strong {
+
+display:block;
+
+font-size:48px;
+
+color:var(--color-primary);
+
+margin-bottom:16px;
+
+}
+
+
+
+
+
+.case-gallery {
+
+padding:96px 0;
+
+}
+
+
+
+.case-gallery h2 {
+
+font-size:42px;
+
+margin-bottom:40px;
+
+}
+
+
+
+.gallery-grid {
+
+display:grid;
+
+gap:24px;
+
+}
+
+
+
+.gallery-grid img {
+
+width:100%;
+
+aspect-ratio:4/3;
+
+object-fit:cover;
+
+border-radius:var(--radius-xl);
+
+}
+
+
+
+
+
+.case-cta {
+
+padding:120px 0;
+
+text-align:center;
+
+background:var(--color-bg);
+
+}
+
+
+
+.case-cta h2 {
+
+font-size:clamp(36px,5vw,56px);
+
+margin-bottom:40px;
+
+}
+
+
+
+
+
+/* фикс header только для страницы кейса */
+
+.header .container {
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+flex-direction:row;
+
+}
+
+
+
+
+@media(min-width:768px){
+
+
+.case-grid {
+
+grid-template-columns:2fr 1fr;
+
+}
+
+
+
+.before-grid {
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+
+
+.results-grid {
+
+grid-template-columns:repeat(3,1fr);
+
+}
+
+
+
+.gallery-grid {
+
+grid-template-columns:repeat(3,1fr);
+
+}
+
+
+}
+
+/* ==========================
+   PREMIUM GALLERY
+========================== */
+
+
+.gallery-layout {
+
+display:grid;
+
+gap:24px;
+
+}
+
+
+
+.gallery-layout img {
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+border-radius:var(--radius-xl);
+
+}
+
+
+
+.gallery-layout__main {
+
+aspect-ratio:16/10;
+
+}
+
+
+
+.gallery-layout__side {
+
+display:grid;
+
+gap:24px;
+
+}
+
+
+
+.gallery-layout__side img {
+
+aspect-ratio:4/3;
+
+}
+
+
+
+
+
+@media(min-width:768px){
+
+
+.gallery-layout {
+
+grid-template-columns:2fr 1fr;
+
+}
+
+
+.gallery-layout__side {
+
+grid-template-rows:repeat(2,1fr);
+
+}
+
+
+}
+
+.results-grid h3 {
+
+font-size:24px;
+
+margin-bottom:12px;
+
+}
+
+
+.results-grid p {
+
+color:var(--color-text-secondary);
+
+line-height:1.6;
+
+}
+
+.case-cta p {
+
+max-width:600px;
+
+margin:0 auto 32px;
+
+color:var(--color-text-secondary);
+
+font-size:18px;
+
+}

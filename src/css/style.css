@@ -1,0 +1,36 @@
+@import "./base/reset.css";
+@import "./base/variables.css";
+@import "./base/typography.css";
+@import "./base/base.css";
+
+@import "./layout/container.css";
+@import "./layout/header.css";
+@import "./layout/hero.css";
+@import "./layout/footer.css";
+
+
+@import "./sections/trust.css";
+@import "./sections/framework.css";
+@import "./sections/problems.css";
+@import "./sections/services.css";
+@import "./sections/process.css";
+@import "./sections/cases.css";
+
+@import "./components/button.css";
+@import "./components/card.css";
+@import "./components/form.css";
+@import "./components/calendar.css";
+
+@import "/src/css/pages/case-detail.css";
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
