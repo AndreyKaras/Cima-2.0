@@ -276,3 +276,46 @@ window.addEventListener("scroll", ()=>{
 
 
 });
+
+// mobile-menu toggle
+
+const menuButton = document.querySelector(".menu-button");
+
+const mobileMenu = document.querySelector(".mobile-menu");
+
+const mobileLinks = document.querySelectorAll(".mobile-menu__link");
+
+
+
+menuButton.addEventListener("click",()=>{
+
+
+    menuButton.classList.toggle("active");
+
+    mobileMenu.classList.toggle("active");
+
+
+    document.body.classList.toggle("menu-open");
+
+
+});
+
+// close mobile menu when clicking on a link
+
+mobileLinks.forEach(link=>{
+
+
+    link.addEventListener("click",()=>{
+
+
+        menuButton.classList.remove("active");
+
+        mobileMenu.classList.remove("active");
+
+        document.body.classList.remove("menu-open");
+
+
+    });
+
+
+});

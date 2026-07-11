@@ -25,6 +25,7 @@
 @import "./components/card.css";
 @import "./components/form.css";
 @import "./components/calendar.css";
+@import "./components/mobile-menu.css";
 
 @import "./pages/case-detail.css";
 
