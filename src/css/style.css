@@ -1,3 +1,5 @@
+
+
 @import "./base/reset.css";
 @import "./base/variables.css";
 @import "./base/typography.css";
@@ -15,15 +17,65 @@
 @import "./sections/services.css";
 @import "./sections/process.css";
 @import "./sections/cases.css";
+@import "./sections/booking.css";
+@import "./sections/faq.css";
+@import "./sections/contact.css";
 
 @import "./components/button.css";
 @import "./components/card.css";
 @import "./components/form.css";
 @import "./components/calendar.css";
 
-@import "/src/css/pages/case-detail.css";
+@import "./pages/case-detail.css";
 
 
+*,
+*::before,
+*::after {
+
+    box-sizing:border-box;
+
+}
+
+:root {
+    --header-height:88px;
+}
+
+
+html {
+    scroll-behavior:smooth;
+}
+
+
+section {
+    scroll-margin-top: var(--header-height);
+}
+
+img {
+
+    max-width:100%;
+    height:auto;
+    display:block;
+
+}
+
+
+:focus-visible {
+
+    outline: 3px solid #111;
+
+    outline-offset: 4px;
+
+}
+
+
+::selection {
+
+    background:#111;
+
+    color:#fff;
+
+}
 
 * {
   margin: 0;
@@ -34,3 +86,20 @@
 body {
   font-family: Arial, sans-serif;
 }
+
+@media (prefers-reduced-motion: reduce){
+
+    *,
+    *::before,
+    *::after{
+
+        animation-duration:0.01ms !important;
+        animation-iteration-count:1 !important;
+        scroll-behavior:auto !important;
+
+        transition-duration:0.01ms !important;
+
+    }
+
+}
+

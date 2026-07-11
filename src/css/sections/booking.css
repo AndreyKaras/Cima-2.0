@@ -1,0 +1,75 @@
+.booking {
+    padding: 120px 0;
+    background: var(--color-bg);
+}
+
+.booking__wrapper {
+    display: grid;
+    gap: 48px;
+    align-items: center;
+}
+
+.booking__title {
+    margin: 16px 0 24px;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.15;
+}
+
+.booking__text {
+    max-width: 620px;
+    margin-bottom: 32px;
+    color: var(--color-text-secondary);
+    line-height: 1.8;
+}
+
+.booking__list {
+    display: grid;
+    gap: 18px;
+}
+
+.booking__list li {
+    padding-left: 8px;
+    font-weight: 500;
+}
+
+.booking__card {
+    padding: 48px;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-sm);
+    text-align: center;
+}
+
+.booking__card-title {
+    margin-bottom: 16px;
+    font-size: 2rem;
+}
+
+.booking__card-text {
+    margin-bottom: 32px;
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+}
+
+.booking__card .button {
+    width: 100%;
+    justify-content: center;
+}
+
+.booking__note {
+    display: block;
+    margin-top: 24px;
+    color: var(--color-text-secondary);
+    font-size: .9rem;
+}
+
+@media (min-width:992px){
+
+    .booking__wrapper{
+
+        grid-template-columns:1.3fr .8fr;
+
+    }
+
+}

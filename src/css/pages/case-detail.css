@@ -541,3 +541,42 @@ color:var(--color-text-secondary);
 font-size:18px;
 
 }
+
+.case-card,
+.service-card{
+
+    transition:
+    transform .45s ease,
+    box-shadow .45s ease;
+
+    overflow:hidden;
+
+}
+
+
+.case-card:hover,
+.service-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:
+    0 25px 60px rgba(0,0,0,.12);
+
+}
+
+
+.case-card img,
+.service-card img{
+
+    transition:
+    transform .7s ease;
+
+}
+
+
+.case-card:hover img,
+.service-card:hover img{
+
+    transform:scale(1.05);
+
+}

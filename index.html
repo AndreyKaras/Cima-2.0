@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
+  <!-- <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CMM Consulting</title>
@@ -11,43 +11,191 @@
 <link 
 href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" 
 rel="stylesheet">
-  </head>
 
+  </head> -->
+<head>
+
+    <!-- Basic -->
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        CIMA | Business Growth System - Estrategia y crecimiento empresarial
+    </title>
+
+    <meta 
+        name="description" 
+        content="CIMA ayuda a empresas y emprendedores a identificar oportunidades de crecimiento, mejorar procesos y construir estrategias claras para crecer de forma sostenible."
+    >
+
+    <meta 
+        name="keywords" 
+        content="consultoría empresarial, estrategia de negocio, crecimiento empresarial, business growth, transformación empresarial, estrategia comercial"
+    >
+
+    <meta name="author" content="CIMA">
+
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="[https://tudominio.com/]">
+
+
+    <!-- Favicon -->
+
+    <link 
+        rel="icon" 
+        type="image/png" 
+        href="assets/images/favicon.png"
+    >
+
+
+    <!-- Open Graph -->
+
+    <meta property="og:type" content="website">
+
+    <meta 
+        property="og:title" 
+        content="CIMA | Business Growth System"
+    >
+
+    <meta 
+        property="og:description" 
+        content="Estrategia, análisis y acompañamiento para empresas que buscan crecer de forma estructurada."
+    >
+
+    <meta 
+        property="og:image" 
+        content="https://tudominio.com/assets/images/og-image.jpg"
+    >
+
+    <meta 
+        property="og:url" 
+        content="https://tudominio.com/"
+    >
+
+    <meta 
+        property="og:site_name" 
+        content="CIMA"
+    >
+
+
+    <!-- Twitter Card -->
+
+    <meta name="twitter:card" content="summary_large_image">
+
+    <meta 
+        name="twitter:title" 
+        content="CIMA | Business Growth System"
+    >
+
+    <meta 
+        name="twitter:description" 
+        content="Consultoría estratégica para identificar oportunidades y acelerar el crecimiento de tu empresa."
+    >
+
+    <meta 
+        name="twitter:image" 
+        content="https://tudominio.com/assets/images/og-image.jpg"
+    >
+
+
+    <!-- Fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
+    <link 
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" 
+        rel="stylesheet"
+    >
+
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="css/style.css">
+
+
+    <script type="application/ld+json">
+
+{
+    "@context": "https://schema.org",
+
+    "@type": "ProfessionalService",
+
+    "name": "CIMA",
+
+    "description": "Business growth system focused on strategy, analysis and sustainable business development.",
+
+    "url": "https://tudominio.com/",
+
+    "logo": "https://tudominio.com/assets/images/logo.png",
+
+
+    "serviceType": [
+        "Business Consulting",
+        "Business Strategy",
+        "Growth Consulting"
+    ],
+
+
+    "areaServed": {
+        "@type": "Country",
+        "name": "Spain"
+    },
+
+
+    "sameAs": [
+        "https://instagram.com/[tu-instagram]",
+        "https://linkedin.com/company/[tu-linkedin]"
+    ]
+
+}
+
+</script>
+
+</head>
   <body>
 
 <header class="header">
 
   <div class="container header__container">
 
-    <a href="#" class="logo">
+    <a href="/index.html" class="logo">
       CIMA
     </a>
 
 
-    <nav class="nav">
+<nav class="nav">
 
-      <a href="#" class="nav__link">
+    <a href="#framework" class="nav__link">
         Método
-      </a>
-
-      <a href="#" class="nav__link">
-        Servicios
-      </a>
-
-      <a href="#" class="nav__link">
-        Casos
-      </a>
-
-      <a href="#" class="nav__link">
-        Contacto
-      </a>
-
-    </nav>
-
-
-    <a href="#" class="button">
-      Agendar consulta
     </a>
+
+    <a href="#services" class="nav__link">
+        Servicios
+    </a>
+
+    <a href="#process" class="nav__link">
+        Proceso
+    </a>
+
+    <a href="#cases" class="nav__link">
+        Casos
+    </a>
+
+    <a href="#booking" class="nav__link">
+        Consulta
+    </a>
+
+</nav>
+
+
+    <a href="#booking" class="button">
+Agendar consulta
+</a>
 
 
     <button class="menu-button">
@@ -120,7 +268,9 @@ para conseguir más clientes.
 
 <img 
 src="./src/assets/images/expert.jpg"
-alt="Business consultant"
+alt="Business consultant" loading="lazy"
+    width="800"
+    height="600"
 >
 
 
@@ -198,7 +348,7 @@ alt="Business consultant"
   </div>
 
 </section>
-<section class="framework">
+<section class="framework" id="framework">
 
   <div class="container">
 
@@ -483,7 +633,7 @@ alt="Business consultant"
 
 
 </section>
-<section class="services">
+<section class="services" id="services">
 
   <div class="container">
 
@@ -654,7 +804,7 @@ alt="Business consultant"
   </div>
 
 </section>
-<section class="process">
+<section class="process" id="process">
 
   <div class="container">
 
@@ -812,8 +962,7 @@ alt="Business consultant"
   </div>
 
 </section>
-<section class="cases">
-
+<section class="cases" id="cases">
   <div class="container">
 
     <div class="section-head">
@@ -822,136 +971,47 @@ alt="Business consultant"
       </p>
 
       <h2 class="section-head__title">
-        Transformaciones reales que generan crecimiento
+        Resultados que hablan por sí mismos
       </h2>
 
       <p class="section-head__text">
-        Cada proyecto combina estrategia, comunicación y soluciones digitales
-        para crear resultados medibles.
+        Cada proyecto representa una estrategia personalizada diseñada para impulsar el crecimiento del negocio.
       </p>
     </div>
 
+    <div class="cases__grid">
 
-    <div class="cases__list">
+      <!-- CASE 01 -->
+      <article class="case-card">
 
+        <div class="case-card__image">
 
-      <article class="cases__item">
+          <img
+            src="./src/assets/images/tuki-cover.jpg"
+            alt="TUKI Drugstore" loading="lazy"
+    width="800"
+    height="600">
+            
 
-        <div class="cases__image">
-          <img 
-          src="./assets/images/case-tuki.jpg" 
-          alt="TUKI Drugstore proyecto">
         </div>
 
+        <div class="case-card__content">
 
-        <div class="cases__content">
-
-          <p class="cases__category">
+          <span class="case-card__category">
             Retail Growth
-          </p>
+          </span>
 
-          <h3 class="cases__title">
+          <h3 class="case-card__title">
             TUKI Drugstore
           </h3>
 
-
-          <div class="cases__info">
-
-            <div class="cases__block">
-              <h4>
-                Desafío
-              </h4>
-
-              <p>
-                Mejorar la presencia digital y conectar
-                con nuevos clientes.
-              </p>
-            </div>
-
-
-            <div class="cases__block">
-              <h4>
-                Solución
-              </h4>
-
-              <p>
-                Estrategia de comunicación,
-                identidad digital y sistema de contenido.
-              </p>
-            </div>
-
-
-            <div class="cases__result">
-              Mayor reconocimiento de marca
-            </div>
-
-          </div>
-
-
-          <a href="/cases/tuki.html" class="cases__link">
-            Ver caso completo →
-          </a>
-
-        </div>
-
-      </article>
-
-
-
-      <article class="cases__item">
-
-        <div class="cases__image">
-          <img 
-          src="./assets/images/case-brand.jpg" 
-          alt="Personal brand project">
-        </div>
-
-
-        <div class="cases__content">
-
-          <p class="cases__category">
-            Personal Brand
+          <p class="case-card__text">
+            Desarrollo de una estrategia digital enfocada en fortalecer la identidad de marca y aumentar la conexión con los clientes.
           </p>
 
-          <h3 class="cases__title">
-            Expert Business Brand
-          </h3>
-
-
-          <div class="cases__info">
-
-            <div class="cases__block">
-              <h4>
-                Desafío
-              </h4>
-
-              <p>
-                Convertir experiencia profesional
-                en una marca digital sólida.
-              </p>
-            </div>
-
-
-            <div class="cases__block">
-              <h4>
-                Solución
-              </h4>
-
-              <p>
-                Posicionamiento, contenido y
-                presencia online.
-              </p>
-            </div>
-
-
-            <div class="cases__result">
-              Mayor autoridad profesional
-            </div>
-
-          </div>
-
-
-          <a href="#" class="cases__link">
+          <a
+            href="./cases/tuki.html"
+            class="case-card__link">
             Ver caso completo →
           </a>
 
@@ -959,10 +1019,393 @@ alt="Business consultant"
 
       </article>
 
+      <!-- CASE 02 -->
+      <article class="case-card">
+
+        <div class="case-card__image">
+
+          <img
+            src="./src/assets/images/expert-cover.jpg"
+            alt="Expert Brand"loading="lazy"
+    width="800"
+    height="600">
+
+        </div>
+
+        <div class="case-card__content">
+
+          <span class="case-card__category">
+            Personal Branding
+          </span>
+
+          <h3 class="case-card__title">
+            Expert Personal Brand
+          </h3>
+
+          <p class="case-card__text">
+            Construcción de una presencia digital sólida para posicionar al cliente como referente en su sector.
+          </p>
+
+          <a
+            href="./cases/expert.html"
+            class="case-card__link">
+            Ver caso completo →
+          </a>
+
+        </div>
+
+      </article>
+
+      <!-- CASE 03 -->
+      <article class="case-card">
+
+        <div class="case-card__image">
+
+          <img
+            src="./src/assets/images/business-cover.jpg"
+            alt="Business Consulting
+            loading="lazy"
+    width="800"
+    height="600"">
+
+        </div>
+
+        <div class="case-card__content">
+
+          <span class="case-card__category">
+            Business Consulting
+          </span>
+
+          <h3 class="case-card__title">
+            Business Transformation
+          </h3>
+
+          <p class="case-card__text">
+            Optimización de procesos internos y creación de una estrategia de crecimiento sostenible.
+          </p>
+
+          <a
+            href="./cases/business.html"
+            class="case-card__link">
+            Ver caso completo →
+          </a>
+
+        </div>
+
+      </article>
 
     </div>
 
   </div>
+</section>
+<section class="booking" id="booking">
+
+    <div class="container">
+
+        <div class="booking__wrapper">
+
+            <div class="booking__content">
+
+                <p class="section-head__label">
+                    CONSULTA
+                </p>
+
+                <h2 class="booking__title">
+                    Reserva una consulta estratégica
+                </h2>
+
+                <p class="booking__text">
+                    En una sesión de 45 minutos analizaremos tu negocio,
+                    identificaremos oportunidades de crecimiento y definiremos
+                    los primeros pasos para construir un sistema sólido.
+                </p>
+
+                <ul class="booking__list">
+
+                    <li>✔ 45 minutos de consultoría personalizada</li>
+
+                    <li>✔ Análisis de tu situación actual</li>
+
+                    <li>✔ Recomendaciones estratégicas</li>
+
+                    <li>✔ Sin compromiso</li>
+
+                </ul>
+
+            </div>
+
+            <div class="booking__card">
+
+                <h3 class="booking__card-title">
+                    Primera consulta
+                </h3>
+
+                <p class="booking__card-text">
+                    Descubre cómo transformar tu negocio con una estrategia clara.
+                </p>
+
+                <a href="#contact" class="button">
+                    Reservar consulta
+                </a>
+
+                <span class="booking__note">
+                    Respuesta en menos de 24 horas
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="faq" id="faq">
+
+    <div class="container">
+
+        <div class="section-head">
+
+            <p class="section-head__label">
+                FAQ
+            </p>
+
+            <h2 class="section-head__title">
+                Preguntas frecuentes
+            </h2>
+
+            <p class="section-head__text">
+                Respondemos las dudas más comunes antes de comenzar una colaboración.
+            </p>
+
+        </div>
+
+        <div class="faq__list">
+
+            <article class="faq__item">
+
+                <button class="faq__question">
+
+                    <span>
+                        ¿Cuánto dura la consulta estratégica?
+                    </span>
+
+                    <span class="faq__icon">+</span>
+
+                </button>
+
+                <div class="faq__answer">
+
+                    <p>
+                        La primera consulta dura aproximadamente 45 minutos y está enfocada en analizar tu negocio, identificar oportunidades y definir los siguientes pasos.
+                    </p>
+
+                </div>
+
+            </article>
+
+            <article class="faq__item">
+
+                <button class="faq__question">
+
+                    <span>
+                        ¿Trabajas con empresas pequeñas?
+                    </span>
+
+                    <span class="faq__icon">+</span>
+
+                </button>
+
+                <div class="faq__answer">
+
+                    <p>
+                        Sí. Colaboramos tanto con emprendedores como con pequeñas y medianas empresas que buscan crecer de forma estructurada.
+                    </p>
+
+                </div>
+
+            </article>
+
+            <article class="faq__item">
+
+                <button class="faq__question">
+
+                    <span>
+                        ¿La consulta tiene algún compromiso?
+                    </span>
+
+                    <span class="faq__icon">+</span>
+
+                </button>
+
+                <div class="faq__answer">
+
+                    <p>
+                        No. Es una conversación inicial para entender tus necesidades y valorar si podemos ayudarte.
+                    </p>
+
+                </div>
+
+            </article>
+
+            <article class="faq__item">
+
+                <button class="faq__question">
+
+                    <span>
+                        ¿Ofrecen acompañamiento después de la estrategia?
+                    </span>
+
+                    <span class="faq__icon">+</span>
+
+                </button>
+
+                <div class="faq__answer">
+
+                    <p>
+                        Sí. Podemos acompañarte durante la implementación para asegurar que la estrategia se convierta en resultados reales.
+                    </p>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="contact" id="contact">
+
+    <div class="container">
+
+        <div class="contact__wrapper">
+
+            <div class="contact__info">
+
+                <p class="section-head__label">
+                    CONTACTO
+                </p>
+
+                <h2 class="contact__title">
+                    Hablemos sobre el crecimiento de tu negocio
+                </h2>
+
+                <p class="contact__text">
+                    Si buscas una estrategia clara y un acompañamiento profesional,
+                    agenda una conversación. Estaremos encantados de conocer tu proyecto.
+                </p>
+
+                <ul class="contact__list">
+
+                    <li>
+
+                        <span>Email</span>
+
+                        <a href="mailto:info@cima.com">
+                            info@cima.com
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <span>WhatsApp</span>
+
+                        <a href="#">
+                            +34 600 000 000
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <span>Instagram</span>
+
+                        <a href="#">
+                            @cima.consulting
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <span>Facebook</span>
+
+                        <a href="#">
+                            CIMA Consulting
+                        </a>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <form class="contact__form">
+
+                <div class="contact__field">
+
+                    <label for="name">
+                        Nombre
+                    </label>
+
+                    <input
+                        id="name"
+                        type="text"
+                        placeholder="Tu nombre">
+
+                </div>
+
+                <div class="contact__field">
+
+                    <label for="email">
+                        Email
+                    </label>
+
+                    <input
+                        id="email"
+                        type="email"
+                        placeholder="correo@email.com">
+
+                </div>
+
+                <div class="contact__field">
+
+                    <label for="company">
+                        Empresa
+                    </label>
+
+                    <input
+                        id="company"
+                        type="text"
+                        placeholder="Nombre de la empresa">
+
+                </div>
+
+                <div class="contact__field">
+
+                    <label for="message">
+                        Cuéntanos sobre tu proyecto
+                    </label>
+
+                    <textarea
+                        id="message"
+                        rows="6"
+                        placeholder="Describe brevemente tu objetivo..."></textarea>
+
+                </div>
+
+                <button class="button" type="submit">
+                    Enviar solicitud
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
 
 </section>
 
@@ -970,9 +1413,48 @@ alt="Business consultant"
 
 
 </main>
+<footer class="footer">
+    <div class="footer-container">
+
+        <div class="footer-brand">
+            <h3>CIMA</h3>
+            <p>Business Growth System</p>
+        </div>
+
+        <div class="footer-links">
+            <div class="footer-column">
+                <h4>Método</h4>
+                <a href="#framework">Framework</a>
+                <a href="#process">Proceso</a>
+                <a href="#cases">Casos</a>
+            </div>
+
+            <div class="footer-column">
+                <h4>Servicios</h4>
+                <a href="#services">Consultoría</a>
+                <a href="#booking">Consulta estratégica</a>
+            </div>
+
+            <div class="footer-column">
+                <h4>Contacto</h4>
+                <a href="#contact">Email</a>
+                <a href="#contact">WhatsApp</a>
+                <a href="#contact">Instagram</a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 CIMA. All rights reserved.</p>
+    </div>
+</footer>
 
 
-<script type="module" src="./src/js/main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script type="module" src="./src/js/main.js" defer></script>
 
 </body>
 </html>
