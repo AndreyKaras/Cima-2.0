@@ -1,118 +1,147 @@
+/* =========================
+   PROCESS
+========================= */
+
+
 .process {
 
-padding-block:
-96px;
+    padding-block:var(--section-padding);
 
-background:
-var(--color-bg);
+    background:var(--color-bg);
 
 }
 
+
+
+/* =========================
+   LIST
+========================= */
 
 
 .process__list {
 
-display:flex;
+    display:flex;
 
-flex-direction:column;
+    flex-direction:column;
 
-gap:
-32px;
+    gap:var(--space-4);
 
 }
 
+
+
+/* =========================
+   ITEM
+========================= */
 
 
 .process__item {
 
-display:grid;
+    display:grid;
 
-grid-template-columns:
-60px 1fr;
+    grid-template-columns:60px 1fr;
 
-gap:
-24px;
+    gap:var(--space-3);
 
-padding-bottom:
-32px;
+    padding-bottom:var(--space-4);
 
-border-bottom:
-1px solid var(--color-border);
+    border-bottom:1px solid var(--color-border);
 
 }
 
+
+
+/* =========================
+   NUMBER
+========================= */
 
 
 .process__number {
 
-font-size:
-18px;
+    font-family:var(--font-heading);
 
-font-weight:
-600;
+    font-size:var(--text-md);
 
-color:
-var(--color-primary);
+    font-weight:var(--weight-bold);
+
+    color:var(--color-primary);
 
 }
 
+
+
+/* =========================
+   TITLE
+========================= */
 
 
 .process__title {
 
-font-size:
-28px;
+    font-family:var(--font-heading);
 
-margin-bottom:
-12px;
+    font-size:var(--heading-sm);
+
+    font-weight:var(--weight-bold);
+
+    line-height:1.3;
+
+    margin-bottom:var(--space-2);
 
 }
 
+
+
+/* =========================
+   TEXT
+========================= */
 
 
 .process__text {
 
-color:
-var(--color-text-secondary);
+    color:var(--color-text-secondary);
 
-max-width:
-500px;
+    line-height:1.7;
+
+    max-width:500px;
 
 }
 
+
+
+/* =========================
+   DESKTOP
+========================= */
 
 
 @media(min-width:768px){
 
 
-.process__list {
+    .process__list {
 
-display:grid;
+        display:grid;
 
-grid-template-columns:
-repeat(2,1fr);
+        grid-template-columns:
+        repeat(2,1fr);
 
-gap:
-48px;
+        gap:var(--space-5);
 
-}
-
+    }
 
 
-.process__item {
 
-border-bottom:none;
+    .process__item {
 
-padding:
-32px;
+        border-bottom:none;
 
-border:
-1px solid var(--color-border);
+        padding:var(--space-4);
 
-border-radius:
-var(--radius-lg);
+        border:1px solid var(--color-border);
 
-}
+        border-radius:var(--radius-lg);
+
+        background:var(--color-surface);
+
+    }
 
 
-}
+}   

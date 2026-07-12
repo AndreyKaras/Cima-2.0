@@ -1,0 +1,118 @@
+/* =========================
+   LOGO
+========================= */
+
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    flex-shrink:0;
+
+    height:100%;
+
+    position:relative;
+
+    z-index:3000;
+
+}
+
+
+
+
+
+.logo__icon{
+
+    display:block;
+
+    width:54px;
+
+    height:auto;
+
+}
+
+
+
+
+
+.logo-main{
+
+    fill:#162555;
+
+}
+
+
+
+.logo-accent{
+
+    fill:#A3C0FF;
+
+}
+
+
+
+
+
+/* =========================
+   MOBILE
+========================= */
+
+
+@media(max-width:767px){
+
+
+.logo__icon{
+
+    width:46px;
+
+}
+
+
+
+}
+
+
+
+
+
+/* =========================
+   TABLET
+========================= */
+
+
+@media(min-width:768px) and (max-width:1099px){
+
+
+.logo__icon{
+
+    width:50px;
+
+}
+
+
+
+}
+
+
+
+
+
+/* =========================
+   DESKTOP
+========================= */
+
+
+@media(min-width:1100px){
+
+
+.logo__icon{
+
+    width:58px;
+
+}
+
+
+
+}

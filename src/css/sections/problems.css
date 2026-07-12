@@ -1,114 +1,152 @@
+/* =========================
+   PROBLEMS
+========================= */
+
+
 .problems {
 
-padding-block:
-96px;
+    padding-block:var(--section-padding);
 
-background:
-var(--color-text);
+    background:var(--color-dark);
 
-color:white;
+    color:var(--color-dark-text);
 
 }
 
+
+
+/* =========================
+   SECTION HEADER
+========================= */
 
 
 .problems .section-head__label {
 
-color:
-#93C5FD;
+    color:#93C5FD;
 
 }
+
+
+
+.problems .section-head__title {
+
+    color:var(--color-dark-text);
+
+}
+
 
 
 .problems .section-head__text {
 
-color:
-rgba(255,255,255,.7);
+    color:rgba(248,250,252,.7);
 
 }
 
+
+
+/* =========================
+   LIST
+========================= */
 
 
 .problems__list {
 
-display:grid;
+    display:grid;
 
-gap:
-24px;
+    gap:var(--space-3);
 
 }
 
 
+
+/* =========================
+   ITEM
+========================= */
 
 
 .problems__item {
 
-padding:
-32px;
+    padding:var(--space-4);
 
-border:
-1px solid rgba(255,255,255,.15);
+    border:1px solid rgba(248,250,252,.15);
 
-border-radius:
-var(--radius-lg);
+    border-radius:var(--radius-lg);
 
 }
 
 
 
+/* =========================
+   NUMBER
+========================= */
 
 
 .problems__number {
 
-display:block;
+    display:block;
 
-font-size:
-14px;
+    font-size:var(--text-xs);
 
-color:
-rgba(255,255,255,.5);
+    font-weight:var(--weight-medium);
 
-margin-bottom:
-32px;
+    color:rgba(248,250,252,.5);
+
+    margin-bottom:var(--space-4);
 
 }
 
 
+
+/* =========================
+   TITLE
+========================= */
 
 
 .problems__title {
 
-font-size:
-24px;
+    font-family:var(--font-heading);
 
-margin-bottom:
-16px;
+    font-size:var(--heading-sm);
+
+    font-weight:var(--weight-bold);
+
+    color:var(--color-dark-text);
+
+    margin-bottom:var(--space-2);
 
 }
 
+
+
+/* =========================
+   TEXT
+========================= */
 
 
 .problems__text {
 
-color:
-rgba(255,255,255,.65);
+    color:rgba(248,250,252,.65);
+
+    line-height:1.7;
 
 }
 
 
 
+/* =========================
+   DESKTOP
+========================= */
 
 
 @media(min-width:768px){
 
 
-.problems__list {
+    .problems__list {
 
-grid-template-columns:
-repeat(2,1fr);
+        grid-template-columns:
+        repeat(2,1fr);
+
+    }
+
 
 }
-
-
-}
-

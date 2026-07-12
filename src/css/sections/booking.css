@@ -1,75 +1,234 @@
+/* =========================
+   BOOKING
+========================= */
+
+
 .booking {
-    padding: 120px 0;
-    background: var(--color-bg);
+
+    padding-block:var(--section-padding);
+
+    background:var(--color-bg);
+
 }
+
+
+
+/* =========================
+   WRAPPER
+========================= */
+
 
 .booking__wrapper {
-    display: grid;
-    gap: 48px;
-    align-items: center;
+
+    display:grid;
+
+    gap:var(--space-6);
+
+    align-items:center;
+
 }
+
+
+
+/* =========================
+   TITLE
+========================= */
+
 
 .booking__title {
-    margin: 16px 0 24px;
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    line-height: 1.15;
+
+    margin:
+    var(--space-2) 0 var(--space-3);
+
+    font-family:var(--font-heading);
+
+    font-size:var(--heading-lg);
+
+    font-weight:var(--weight-bold);
+
+    line-height:1.15;
+
 }
+
+
+
+/* =========================
+   TEXT
+========================= */
+
 
 .booking__text {
-    max-width: 620px;
-    margin-bottom: 32px;
-    color: var(--color-text-secondary);
-    line-height: 1.8;
+
+    max-width:620px;
+
+    margin-bottom:var(--space-4);
+
+    color:var(--color-text-secondary);
+
+    line-height:1.8;
+
 }
+
+
+
+/* =========================
+   LIST
+========================= */
+
 
 .booking__list {
-    display: grid;
-    gap: 18px;
+
+    display:grid;
+
+    gap:var(--space-3);
+
 }
+
+
 
 .booking__list li {
-    padding-left: 8px;
-    font-weight: 500;
+
+    position:relative;
+
+    padding-left:var(--space-3);
+
+    font-weight:var(--weight-medium);
+
+    color:var(--color-text);
+
 }
+
+
+
+.booking__list li::before {
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    top:10px;
+
+    width:7px;
+
+    height:7px;
+
+    border-radius:50%;
+
+    background:var(--color-primary);
+
+}
+
+
+
+/* =========================
+   CARD
+========================= */
+
 
 .booking__card {
-    padding: 48px;
-    background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-xl);
-    box-shadow: var(--shadow-sm);
-    text-align: center;
+
+    padding:var(--space-6);
+
+    background:var(--color-surface);
+
+    border:1px solid var(--color-border);
+
+    border-radius:var(--radius-xl);
+
+    box-shadow:var(--shadow-md);
+
+    text-align:center;
+
 }
+
+
+
+/* =========================
+   CARD TITLE
+========================= */
+
 
 .booking__card-title {
-    margin-bottom: 16px;
-    font-size: 2rem;
+
+    font-family:var(--font-heading);
+
+    font-size:var(--heading-sm);
+
+    font-weight:var(--weight-bold);
+
+    margin-bottom:var(--space-2);
+
 }
+
+
+
+/* =========================
+   CARD TEXT
+========================= */
+
 
 .booking__card-text {
-    margin-bottom: 32px;
-    color: var(--color-text-secondary);
-    line-height: 1.7;
+
+    margin-bottom:var(--space-4);
+
+    color:var(--color-text-secondary);
+
+    line-height:1.7;
+
 }
+
+
+
+/* =========================
+   BUTTON
+========================= */
+
 
 .booking__card .button {
-    width: 100%;
-    justify-content: center;
+
+    width:100%;
+
 }
+
+
+
+/* =========================
+   NOTE
+========================= */
+
 
 .booking__note {
-    display: block;
-    margin-top: 24px;
-    color: var(--color-text-secondary);
-    font-size: .9rem;
+
+    display:block;
+
+    margin-top:var(--space-3);
+
+    color:var(--color-text-secondary);
+
+    font-size:var(--text-xs);
+
 }
 
-@media (min-width:992px){
 
-    .booking__wrapper{
 
-        grid-template-columns:1.3fr .8fr;
+/* =========================
+   DESKTOP
+========================= */
+
+
+@media(min-width:992px){
+
+
+    .booking__wrapper {
+
+        grid-template-columns:
+        1.3fr .8fr;
+
+        gap:var(--space-8);
 
     }
+
 
 }

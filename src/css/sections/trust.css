@@ -1,70 +1,157 @@
-.trust {
+/* ==================================
+TRUST
+================================== */
 
-padding-block:
-64px;
+.trust{
 
-border-block:
-1px solid var(--color-border);
+    padding:80px 0;
 
-}
+    border-top:1px solid var(--color-border);
 
-
-.trust__list {
-
-display:grid;
-
-grid-template-columns:1fr;
-
-gap:32px;
+    border-bottom:1px solid var(--color-border);
 
 }
 
 
+/* ========================= */
 
-.trust__item {
+.trust__list{
 
-display:flex;
+    display:grid;
 
-flex-direction:column;
+    grid-template-columns:repeat(4,1fr);
 
-gap:8px;
+    gap:50px;
+
+    list-style:none;
+
+}
+
+
+/* ========================= */
+
+.trust__item{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    text-align:center;
+
+    gap:12px;
+
+}
+
+
+.trust__number{
+
+    font-size:46px;
+
+    line-height:1;
+
+    font-weight:700;
+
+    letter-spacing:-.03em;
+
+    color:var(--color-primary);
 
 }
 
 
 
-.trust__number {
+.trust__text{
 
-font-size:48px;
+    max-width:220px;
 
-line-height:1;
+    line-height:1.5;
 
-letter-spacing:-0.05em;
+    color:var(--color-text-secondary);
+
+    font-size:15px;
+
+}
+
+/* ========================= */
+
+@media(max-width:1100px){
+
+.trust__list{
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:45px 70px;
 
 }
 
 
+.trust__text{
 
-.trust__text {
+    max-width:260px;
 
-color:
-var(--color-text-secondary);
-
-font-size:16px;
+}
 
 }
 
 
+/* ========================= */
 
-@media(min-width:768px){
+@media(max-width:600px){
 
+.trust{
 
-.trust__list {
-
-grid-template-columns:
-repeat(4,1fr);
+    padding:60px 0;
 
 }
 
+
+.trust__list{
+
+    grid-template-columns:1fr;
+
+    gap:35px;
+
+}
+
+
+.trust__item{
+
+    padding-bottom:30px;
+
+    border-bottom:1px solid var(--color-border);
+
+}
+
+
+.trust__item:last-child{
+
+    border-bottom:none;
+
+}
+
+
+.trust__number{
+
+    font-size:40px;
+
+}
+
+
+.trust__text{
+
+    max-width:280px;
+
+}
+
+}
+
+@media(min-width:1101px){
+
+.trust__item:not(:last-child){
+
+    border-right:1px solid var(--color-border);
+
+}
 
 }

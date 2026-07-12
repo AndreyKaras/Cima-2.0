@@ -1,39 +1,51 @@
+/* =========================
+   SERVICES
+========================= */
+
+
 .services {
 
-padding-block:
-96px;
+    padding-block:var(--section-padding);
 
 }
 
+
+
+/* =========================
+   LIST
+========================= */
 
 
 .services__list {
 
-display:grid;
+    display:grid;
 
-gap:
-24px;
+    gap:var(--space-3);
 
 }
 
 
 
+/* =========================
+   CARD
+========================= */
+
+
 .services__item {
 
-padding:
-40px;
+    display:flex;
 
-background:
-var(--color-surface);
+    flex-direction:column;
 
-border:
-1px solid var(--color-border);
+    padding:var(--space-5);
 
-border-radius:
-var(--radius-xl);
+    background:var(--color-surface);
 
-transition:
-var(--transition);
+    border:1px solid var(--color-border);
+
+    border-radius:var(--radius-lg);
+
+    transition:var(--transition);
 
 }
 
@@ -41,71 +53,91 @@ var(--transition);
 
 .services__item:hover {
 
-transform:
-translateY(-6px);
+    transform:translateY(-3px);
 
-box-shadow:
-var(--shadow-sm);
+    box-shadow:var(--shadow-md);
 
 }
 
+
+
+/* =========================
+   NUMBER
+========================= */
 
 
 .services__number {
 
-display:block;
+    display:block;
 
-font-size:
-14px;
+    font-size:var(--text-xs);
 
-font-weight:
-600;
+    font-weight:var(--weight-semibold);
 
-color:
-var(--color-primary);
+    letter-spacing:.08em;
 
-margin-bottom:
-32px;
+    color:var(--color-primary);
+
+    margin-bottom:var(--space-4);
 
 }
 
+
+
+/* =========================
+   TITLE
+========================= */
 
 
 .services__title {
 
-font-size:
-32px;
+    font-family:var(--font-heading);
 
-margin-bottom:
-20px;
+    font-size:var(--heading-md);
+
+    font-weight:var(--weight-bold);
+
+    line-height:1.2;
+
+    margin-bottom:var(--space-3);
 
 }
 
+
+
+/* =========================
+   DESCRIPTION
+========================= */
 
 
 .services__description {
 
-color:
-var(--color-text-secondary);
+    color:var(--color-text-secondary);
 
-margin-bottom:
-32px;
+    line-height:1.7;
 
-max-width:
-420px;
+    margin-bottom:var(--space-4);
+
+    max-width:420px;
 
 }
 
 
 
+/* =========================
+   FEATURES
+========================= */
+
+
 .services__features {
 
-display:flex;
+    display:flex;
 
-flex-direction:column;
+    flex-direction:column;
 
-gap:
-12px;
+    gap:var(--space-2);
+
+    margin-top:auto;
 
 }
 
@@ -113,55 +145,63 @@ gap:
 
 .services__features li {
 
-position:relative;
+    position:relative;
 
-padding-left:
-24px;
+    padding-left:var(--space-3);
+
+    color:var(--color-text);
 
 }
 
+
+
+/* bullet */
 
 
 .services__features li::before {
 
-content:"";
+    content:"";
 
-position:absolute;
+    position:absolute;
 
-left:0;
+    left:0;
 
-top:10px;
+    top:11px;
 
-width:8px;
+    width:7px;
 
-height:8px;
+    height:7px;
 
-background:
-var(--color-primary);
+    background:var(--color-primary);
 
-border-radius:50%;
+    border-radius:50%;
 
 }
 
+
+
+/* =========================
+   DESKTOP
+========================= */
 
 
 @media(min-width:1024px){
 
 
-.services__list {
+    .services__list {
 
-grid-template-columns:
-repeat(3,1fr);
+        grid-template-columns:
+        repeat(3,1fr);
 
-}
+    }
 
 
-.services__item {
 
-min-height:
-520px;
+    .services__item {
 
-}
+        min-height:480px;
+
+    }
 
 
 }

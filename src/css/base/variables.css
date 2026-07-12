@@ -1,52 +1,274 @@
 :root {
 
-  /* COLORS */
 
-  --color-bg: #FAFAF8;
-  --color-surface: #FFFFFF;
-
-  --color-text: #111111;
-  --color-text-secondary: #5F6368;
-
-  --color-primary: #1D4ED8;
-  --color-primary-hover: #1E40AF;
-
-  --color-border: #E5E7EB;
+/* =========================
+   COLORS
+========================= */
 
 
-  /* FONT */
+/* Background */
 
-  --font-main: "Inter", sans-serif;
+--color-bg: #F7F9FC;
 
-
-  /* CONTAINER */
-
-  --container-width: 1280px;
-  --container-padding: 24px;
+--color-surface: #FFFFFF;
 
 
-  /* SPACING */
 
-  --space-1: 8px;
-  --space-2: 16px;
-  --space-3: 24px;
-  --space-4: 32px;
-  --space-5: 48px;
-  --space-6: 64px;
-  --space-7: 96px;
-  --space-8: 128px;
+/* Text */
+ --header-height:88px;
 
 
-  /* RADIUS */
+--color-text: #0F172A;
 
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 20px;
-  --radius-xl: 32px;
+--color-text-secondary: #64748B;
 
 
-  /* EFFECTS */
 
-  --transition: 0.3s ease;
+/* Brand */
+
+--color-primary: #1E3A8A;
+
+--color-primary-hover: #172554;
+
+
+--color-primary-light: #EFF6FF;
+
+
+
+/* Dark sections */
+
+--color-dark: #0B1220;
+
+--color-dark-text: #F8FAFC;
+
+
+
+/* Borders */
+
+--color-border: #E2E8F0;
+
+
+
+
+/* =========================
+   FONTS
+========================= */
+
+
+--font-heading: "Manrope", sans-serif;
+
+--font-main: "Inter", sans-serif;
+
+
+
+/* =========================
+   FONT WEIGHTS
+========================= */
+
+
+--weight-regular:400;
+
+--weight-medium:500;
+
+--weight-semibold:600;
+
+--weight-bold:700;
+
+
+
+/* =========================
+   TYPOGRAPHY
+========================= */
+
+
+--text-xs:14px;
+
+--text-sm:16px;
+
+--text-md:18px;
+
+--text-lg:20px;
+
+--text-xl:24px;
+
+
+
+--heading-xl:clamp(48px,6vw,80px);
+
+--heading-lg:clamp(36px,4vw,56px);
+
+--heading-md:32px;
+
+--heading-sm:24px;
+
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+
+--container-width:1280px;
+
+--container-padding:24px;
+
+
+
+/* =========================
+   SPACING
+========================= */
+
+
+--space-1:8px;
+
+--space-2:16px;
+
+--space-3:24px;
+
+--space-4:32px;
+
+--space-5:48px;
+
+--space-6:64px;
+
+--space-7:96px;
+
+--space-8:128px;
+
+
+
+/* Sections */
+
+--section-padding:120px;
+
+
+
+/* =========================
+   RADIUS
+========================= */
+
+
+--radius-sm:8px;
+
+--radius-md:12px;
+
+--radius-lg:16px;
+
+--radius-xl:24px;
+
+
+
+/* =========================
+   EFFECTS
+========================= */
+
+
+--shadow-sm:
+0 4px 12px rgba(15,23,42,.06);
+
+
+
+--shadow-md:
+0 12px 30px rgba(15,23,42,.08);
+
+
+
+--transition:.3s ease;
+
+
+}
+
+
+/* =========================
+   TABLET
+   768px - 1099px
+========================= */
+
+@media(min-width:768px) and (max-width:1099px){
+
+:root{
+
+    --header-height:80px;
+
+    --container-padding:32px;
+
+    --heading-xl:clamp(52px,6vw,64px);
+
+    --heading-lg:clamp(34px,4vw,48px);
+
+}
+
+}
+
+
+
+/* =========================
+   MOBILE
+   0 - 767px
+========================= */
+
+
+@media(max-width:767px){
+
+
+
+:root{
+
+
+    --header-height:72px;
+
+
+    --container-padding:20px;
+
+
+
+    --text-md:16px;
+
+
+    --text-lg:18px;
+
+
+
+    --heading-xl:clamp(40px,11vw,48px);
+
+
+
+    --heading-lg:clamp(32px,8vw,38px);
+
+
+
+    --heading-md:26px;
+
+
+
+    --section-padding:80px;
+
+
+
+    --space-7:64px;
+
+
+    --space-8:80px;
+
+
+
+}
+
+
+
+}
+
+/* =========================
+   MOBILE TEXT
+========================= */
+
+@media(max-width:767px){
+
+p{
+
+    line-height:1.65;
+
+}
+
 
 }

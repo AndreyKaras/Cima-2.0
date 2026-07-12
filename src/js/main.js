@@ -38,6 +38,7 @@ faqItems.forEach(item => {
 
             answer.style.maxHeight =
             answer.scrollHeight + "px";
+            
 
         }
 
@@ -57,43 +58,245 @@ gsap.registerPlugin(ScrollTrigger);
 // HERO ANIMATION
 // =======================
 
+// =======================
+// HERO ANIMATION
+// =======================
+
+// =======================
+// HERO ANIMATION
+// =======================
+
+
 const heroTimeline = gsap.timeline({
-    defaults: {
-        duration: 1,
-        ease: "power3.out"
+
+    defaults:{
+        ease:"power2.out"
     }
+
 });
 
 
 heroTimeline
-.from(".hero-title", {
-    y: 60,
-    opacity: 0
+
+
+.from(".hero__label",{
+
+    opacity:0,
+
+    y:12,
+
+    duration:.7
+
 })
 
-.from(".hero-text", {
-    y: 40,
-    opacity: 0
-}, "-=0.6")
 
-.from(".hero-btn", {
-    y: 30,
-    opacity: 0
-}, "-=0.5")
+.from(".hero__title",{
 
-.from(".hero-image", {
-    scale: 0.95,
-    opacity: 0
-}, "-=0.6");
+    opacity:0,
+
+    y:18,
+
+    duration:.9
+
+},"-=0.45")
 
 
+.from(".hero__text",{
+
+    opacity:0,
+
+    y:16,
+
+    duration:.8
+
+},"-=0.55")
+
+
+.from(".hero__actions",{
+
+    opacity:0,
+
+    y:14,
+
+    duration:.8
+
+},"-=0.55")
+
+
+// Dashboard появление
+
+.from(".dashboard-card",{
+
+    opacity:0,
+
+    y:30,
+
+    scale:.96,
+
+    stagger:.15,
+
+    duration:1,
+
+    ease:"power3.out"
+
+},"-=0.8");
+
+
+
+
+
+// =======================
+// HERO DASHBOARD FLOAT
+// =======================
+
+const isDesktop = window.innerWidth >= 1100;
+
+
+if(isDesktop){
+gsap.to(".dashboard-card--main",{
+
+    y:-10,
+
+    rotation:.4,
+
+    duration:7,
+
+    repeat:-1,
+
+    yoyo:true,
+
+    ease:"sine.inOut"
+
+});
+
+
+
+gsap.to(".dashboard-card--metric",{
+
+    y:-12,
+
+    rotation:1,
+
+    duration:6,
+
+    repeat:-1,
+
+    yoyo:true,
+
+    ease:"sine.inOut"
+
+});
+
+
+
+
+gsap.to(".dashboard-card--progress",{
+
+    y:8,
+
+    rotation:-1,
+
+    duration:8,
+
+    repeat:-1,
+
+    yoyo:true,
+
+    ease:"sine.inOut"
+
+});
+
+
+}
+
+
+// =======================
+// MOUSE PARALLAX
+// =======================
+
+//
+// HERO DASHBOARD MOUSE PARALLAX
+//
+
+const heroDashboard = document.querySelector(".hero-dashboard");
+
+
+if(heroDashboard){
+
+    gsap.set(heroDashboard,{
+        transformPerspective:1500
+    });
+
+    heroDashboard.addEventListener("mousemove", (e)=>{
+
+
+        const rect = heroDashboard.getBoundingClientRect();
+
+
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+
+
+const moveX = (x - rect.width / 2) / 45;
+const moveY = (y - rect.height / 2) / 45;
+
+
+
+        gsap.to(heroDashboard,{
+
+            rotateY: moveX,
+
+            rotateX: -moveY,
+
+            duration:1.4,
+
+            ease:"power3.out",
+
+            transformPerspective:1000
+
+        });
+
+
+
+        
+
+
+    });
+
+
+
+
+
+    heroDashboard.addEventListener("mouseleave",()=>{
+
+
+        gsap.to(heroDashboard,{
+
+            rotateY:0,
+
+            rotateX:0,
+
+            duration:1.8,
+
+            ease:"power3.out"
+
+        });
+
+
+    });
+
+
+
+}
 
 // =======================
 // SECTION REVEAL
 // =======================
 
-const sections = document.querySelectorAll("section");
-
+const sections = document.querySelectorAll(
+    ".section"
+);
 
 sections.forEach(section => {
 
@@ -179,32 +382,10 @@ images.forEach(img=>{
 // BUTTON HOVER
 // =======================
 
-const buttons = document.querySelectorAll("button, .btn");
+const buttons = document.querySelectorAll(
+    ".button, button"
+);
 
-
-buttons.forEach(btn=>{
-
-    btn.addEventListener("mouseenter",()=>{
-
-        gsap.to(btn,{
-            scale:1.04,
-            duration:.25,
-            ease:"power2.out"
-        });
-
-    });
-
-
-    btn.addEventListener("mouseleave",()=>{
-
-        gsap.to(btn,{
-            scale:1,
-            duration:.25
-        });
-
-    });
-
-});
 
 // =======================
 // SMOOTH SCROLL
@@ -234,27 +415,6 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
 });
 
 
-// =======================
-// NAVBAR SCROLL EFFECT
-// =======================
-
-const navbar = document.querySelector(".navbar");
-
-
-window.addEventListener("scroll",()=>{
-
-    if(window.scrollY > 50){
-
-        navbar.classList.add("scrolled");
-
-    } else {
-
-        navbar.classList.remove("scrolled");
-
-    }
-
-});
-
 
 //  navbar scroll effect for header
 
@@ -277,7 +437,10 @@ window.addEventListener("scroll", ()=>{
 
 });
 
-// mobile-menu toggle
+// =======================
+// MOBILE MENU
+// =======================
+
 
 const menuButton = document.querySelector(".menu-button");
 
@@ -287,35 +450,141 @@ const mobileLinks = document.querySelectorAll(".mobile-menu__link");
 
 
 
-menuButton.addEventListener("click",()=>{
+function openMenu(){
+
+    menuButton.classList.add("active");
+
+    mobileMenu.classList.add("active");
+
+    document.body.classList.add("menu-open");
+
+}
 
 
-    menuButton.classList.toggle("active");
 
-    mobileMenu.classList.toggle("active");
+function closeMenu(){
 
+    menuButton.classList.remove("active");
 
-    document.body.classList.toggle("menu-open");
+    mobileMenu.classList.remove("active");
 
+    document.body.classList.remove("menu-open");
 
-});
-
-// close mobile menu when clicking on a link
-
-mobileLinks.forEach(link=>{
+}
 
 
-    link.addEventListener("click",()=>{
+
+if(menuButton && mobileMenu){
 
 
-        menuButton.classList.remove("active");
 
-        mobileMenu.classList.remove("active");
+    // OPEN / CLOSE BUTTON
 
-        document.body.classList.remove("menu-open");
+    menuButton.addEventListener("click",(e)=>{
+
+        e.stopPropagation();
+
+
+        if(mobileMenu.classList.contains("active")){
+
+            closeMenu();
+
+        } else {
+
+            openMenu();
+
+        }
 
 
     });
 
 
-});
+
+    // CLOSE AFTER CLICK LINK
+
+    mobileLinks.forEach(link=>{
+
+
+        link.addEventListener("click",()=>{
+
+
+            closeMenu();
+
+
+        });
+
+
+    });
+
+
+
+    // CLICK OUTSIDE MENU
+
+    document.addEventListener("click",(e)=>{
+
+
+        const clickedInsideMenu = mobileMenu.contains(e.target);
+
+        const clickedButton = menuButton.contains(e.target);
+
+
+
+        if(
+            mobileMenu.classList.contains("active") &&
+            !clickedInsideMenu &&
+            !clickedButton
+        ){
+
+            closeMenu();
+
+        }
+
+
+    });
+
+
+
+    // ESC CLOSE
+
+    document.addEventListener("keydown",(e)=>{
+
+
+        if(
+            e.key === "Escape" &&
+            mobileMenu.classList.contains("active")
+        ){
+
+            closeMenu();
+
+        }
+
+
+    });
+
+
+}
+
+// logo scroll to top
+
+if(logo){
+
+    logo.addEventListener("click",(e)=>{
+
+        e.preventDefault();
+
+
+        closeMenu();
+
+
+        window.scrollTo({
+
+            top:0,
+
+            behavior:"smooth"
+
+        });
+
+
+    });
+
+}

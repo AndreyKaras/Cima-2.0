@@ -1,94 +1,268 @@
+/* =========================
+   CONTACT
+========================= */
+
+
 .contact {
-    padding: 120px 0;
-    background: var(--color-bg);
+
+    padding-block:var(--section-padding);
+
+    background:var(--color-bg);
+
 }
+
+
+
+/* =========================
+   WRAPPER
+========================= */
+
 
 .contact__wrapper {
-    display: grid;
-    gap: 64px;
+
+    display:grid;
+
+    gap:var(--space-7);
+
 }
+
+
+
+/* =========================
+   TITLE
+========================= */
+
 
 .contact__title {
-    margin: 18px 0 24px;
-    font-size: clamp(2rem,5vw,3.5rem);
+
+    margin:
+    var(--space-2) 0 var(--space-3);
+
+    font-family:var(--font-heading);
+
+    font-size:var(--heading-lg);
+
+    font-weight:var(--weight-bold);
+
+    line-height:1.15;
+
 }
+
+
+
+/* =========================
+   TEXT
+========================= */
+
 
 .contact__text {
-    margin-bottom: 40px;
-    max-width: 550px;
-    line-height: 1.8;
-    color: var(--color-text-secondary);
+
+    margin-bottom:var(--space-5);
+
+    max-width:550px;
+
+    line-height:1.8;
+
+    color:var(--color-text-secondary);
+
 }
+
+
+
+/* =========================
+   CONTACT INFO
+========================= */
+
 
 .contact__list {
-    display: grid;
-    gap: 28px;
+
+    display:grid;
+
+    gap:var(--space-4);
+
 }
+
+
 
 .contact__list li {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:var(--space-1);
+
 }
+
+
 
 .contact__list span {
-    font-size: .85rem;
-    text-transform: uppercase;
-    color: var(--color-text-secondary);
+
+    font-size:var(--text-xs);
+
+    font-weight:var(--weight-semibold);
+
+    letter-spacing:.1em;
+
+    text-transform:uppercase;
+
+    color:var(--color-text-secondary);
+
 }
+
+
 
 .contact__list a {
-    color: var(--color-text);
-    font-weight: 600;
-    text-decoration: none;
+
+    color:var(--color-text);
+
+    font-weight:var(--weight-semibold);
+
+    transition:var(--transition);
+
 }
+
+
+
+.contact__list a:hover {
+
+    color:var(--color-primary);
+
+}
+
+
+
+/* =========================
+   FORM
+========================= */
+
 
 .contact__form {
-    padding: 48px;
-    background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-xl);
+
+    padding:var(--space-6);
+
+    background:var(--color-surface);
+
+    border:1px solid var(--color-border);
+
+    border-radius:var(--radius-xl);
+
+    box-shadow:var(--shadow-sm);
+
 }
+
+
+
+/* =========================
+   FIELD
+========================= */
+
 
 .contact__field {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 24px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    margin-bottom:var(--space-3);
+
 }
 
+
+
 .contact__field label {
-    margin-bottom: 10px;
-    font-weight: 600;
+
+    margin-bottom:var(--space-1);
+
+    font-size:var(--text-sm);
+
+    font-weight:var(--weight-semibold);
+
 }
+
+
+
+/* =========================
+   INPUTS
+========================= */
+
 
 .contact__field input,
 .contact__field textarea {
-    padding: 16px;
-    border: 1px solid var(--color-border);
-    border-radius: 12px;
-    background: transparent;
-    font: inherit;
-    transition: .3s;
+
+    padding:16px;
+
+    border:1px solid var(--color-border);
+
+    border-radius:var(--radius-md);
+
+    background:transparent;
+
+    font:inherit;
+
+    color:var(--color-text);
+
+    transition:var(--transition);
+
 }
+
+
+
+.contact__field textarea {
+
+    min-height:140px;
+
+    resize:vertical;
+
+}
+
+
 
 .contact__field input:focus,
 .contact__field textarea:focus {
-    border-color: var(--color-primary);
-    outline: none;
+
+    border-color:var(--color-primary);
+
+    outline:none;
+
+    box-shadow:
+    0 0 0 3px var(--color-primary-light);
+
 }
 
+
+
+/* =========================
+   BUTTON
+========================= */
+
+
 .contact__form .button {
-    width: 100%;
-    justify-content: center;
+
+    width:100%;
+
 }
+
+
+
+/* =========================
+   DESKTOP
+========================= */
+
 
 @media(min-width:992px){
 
-    .contact__wrapper{
 
-        grid-template-columns:1fr 1fr;
+    .contact__wrapper {
+
+        grid-template-columns:
+        1fr 1fr;
+
         align-items:start;
 
+        gap:var(--space-8);
+
     }
+
 
 }

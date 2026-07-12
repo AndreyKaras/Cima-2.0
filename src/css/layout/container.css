@@ -1,11 +1,25 @@
+/* =========================
+   CONTAINER
+========================= */
+
+
 .container {
 
-  width:
-  min(
-    calc(100% - var(--container-padding) * 2),
-    var(--container-width)
-  );
+    width:min(
+        calc(100% - var(--container-padding) * 2),
+        var(--container-width)
+    );
 
-  margin-inline: auto;
+    margin-inline:auto;
+
+}
+
+@media(max-width:768px){
+
+    :root{
+
+        --container-padding:20px;
+
+    }
 
 }

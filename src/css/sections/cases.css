@@ -1,115 +1,285 @@
+/* =========================
+   CASES
+========================= */
+
+
 .cases {
-    padding: 120px 0;
-    background: var(--color-text);
-    color: #fff;
+
+    padding-block:var(--section-padding);
+
+    background:var(--color-dark);
+
+    color:var(--color-dark-text);
+
 }
+
+
+
+/* =========================
+   HEADER
+========================= */
+
 
 .cases .section-head {
-    margin-bottom: 72px;
+
+    margin-bottom:var(--space-7);
+
 }
+
+
 
 .cases .section-head__label {
-    color: var(--color-primary);
+
+    color:#93C5FD;
+
 }
+
+
 
 .cases .section-head__title {
-    color: #fff;
+
+    color:var(--color-dark-text);
+
 }
+
+
 
 .cases .section-head__text {
-    color: rgba(255,255,255,.7);
+
+    color:rgba(248,250,252,.7);
+
 }
+
+
+
+/* =========================
+   GRID
+========================= */
+
 
 .cases__grid {
-    display: grid;
-    gap: 40px;
+
+    display:grid;
+
+    gap:var(--space-4);
+
 }
+
+
+
+/* =========================
+   CARD
+========================= */
+
 
 .case-card {
-    overflow: hidden;
-    border: 1px solid rgba(255,255,255,.08);
-    border-radius: var(--radius-xl);
-    background: rgba(255,255,255,.03);
-    transition: .35s ease;
+
+    overflow:hidden;
+
+    border:1px solid rgba(248,250,252,.12);
+
+    border-radius:var(--radius-xl);
+
+    background:rgba(248,250,252,.04);
+
+    transition:var(--transition);
+
 }
+
+
 
 .case-card:hover {
-    transform: translateY(-8px);
-    border-color: rgba(255,255,255,.18);
+
+    transform:translateY(-3px);
+
+    border-color:rgba(248,250,252,.25);
+
 }
+
+
+
+/* =========================
+   IMAGE
+========================= */
+
 
 .case-card__image {
-    aspect-ratio: 16 / 9;
-    overflow: hidden;
+
+    aspect-ratio:16 / 9;
+
+    overflow:hidden;
+
 }
+
+
 
 .case-card__image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: .45s ease;
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.5s ease;
+
 }
+
+
 
 .case-card:hover img {
-    transform: scale(1.05);
+
+    transform:scale(1.04);
+
 }
+
+
+
+/* =========================
+   CONTENT
+========================= */
+
 
 .case-card__content {
-    padding: 36px;
+
+    padding:var(--space-5);
+
 }
+
+
+
+/* =========================
+   CATEGORY
+========================= */
+
 
 .case-card__category {
-    display: inline-block;
-    margin-bottom: 14px;
-    color: #93C5FD;
-    font-size: .9rem;
-    font-weight: 600;
-    letter-spacing: .08em;
-    text-transform: uppercase;
+
+    display:inline-block;
+
+    margin-bottom:var(--space-2);
+
+    color:#93C5FD;
+
+    font-size:var(--text-xs);
+
+    font-weight:var(--weight-semibold);
+
+    letter-spacing:.1em;
+
+    text-transform:uppercase;
+
 }
+
+
+
+/* =========================
+   TITLE
+========================= */
+
 
 .case-card__title {
-    margin-bottom: 18px;
-    font-size: 2rem;
+
+    font-family:var(--font-heading);
+
+    font-size:var(--heading-sm);
+
+    font-weight:var(--weight-bold);
+
+    line-height:1.2;
+
+    color:var(--color-dark-text);
+
+    margin-bottom:var(--space-3);
+
 }
+
+
+
+/* =========================
+   TEXT
+========================= */
+
 
 .case-card__text {
-    margin-bottom: 30px;
-    line-height: 1.7;
-    color: rgba(255,255,255,.75);
+
+    margin-bottom:var(--space-4);
+
+    line-height:1.7;
+
+    color:rgba(248,250,252,.75);
+
 }
+
+
+
+/* =========================
+   LINK
+========================= */
+
 
 .case-card__link {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    color: #fff;
-    text-decoration: none;
-    font-weight: 600;
-    transition: .3s;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    color:var(--color-dark-text);
+
+    font-weight:var(--weight-semibold);
+
+    transition:var(--transition);
+
 }
+
+
 
 .case-card__link:hover {
-    color: var(--color-primary);
-    gap: 16px;
-}
 
-@media (min-width:768px){
+    color:#93C5FD;
 
-    .cases__grid{
-
-        grid-template-columns:repeat(2,1fr);
-
-    }
+    gap:14px;
 
 }
 
-@media (min-width:1200px){
 
-    .cases__grid{
 
-        grid-template-columns:repeat(3,1fr);
+/* =========================
+   TABLET
+========================= */
+
+
+@media(min-width:768px){
+
+
+    .cases__grid {
+
+        grid-template-columns:
+        repeat(2,1fr);
 
     }
+
+
+}
+
+
+
+/* =========================
+   DESKTOP
+========================= */
+
+
+@media(min-width:1200px){
+
+
+    .cases__grid {
+
+        grid-template-columns:
+        repeat(3,1fr);
+
+    }
+
 
 }
