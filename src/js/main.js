@@ -506,8 +506,6 @@ function closeMenu(){
 
 if(menuButton && mobileMenu){
 
-
-
     // OPEN / CLOSE BUTTON
 
     menuButton.addEventListener("click",(e)=>{
@@ -618,6 +616,7 @@ if(logo){
     });
 
 }
+
 
 // =======================
 // CONTACT FORM

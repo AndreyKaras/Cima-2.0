@@ -453,3 +453,60 @@
     rotate(-45deg);
 
 }
+
+
+
+/* =========================
+   NAVIGATION ENHANCEMENTS
+========================= */
+
+
+.nav__link.active {
+
+    color:var(--color-primary);
+
+}
+
+
+
+.nav__link.active::after {
+
+    width:100%;
+
+}
+
+
+
+@media(min-width:768px) and (max-width:1099px){
+
+
+    .nav {
+
+        display:none;
+
+    }
+
+
+
+    .menu-button {
+
+        display:flex;
+
+    }
+
+
+    .header .button {
+
+        display:inline-flex;
+
+
+        height:44px;
+
+        padding-inline:var(--space-3);
+
+        font-size:var(--text-xs);
+
+    }
+
+
+}

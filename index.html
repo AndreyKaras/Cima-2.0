@@ -155,7 +155,7 @@ rel="stylesheet">
     <div class="container header__container">
 
 
-       <a href="#" class="logo" aria-label="CIMA" alt="CIMA">
+       <a href="#" class="logo" aria-label="CIMA">
 
     <svg class="logo__icon" width="48" height="45" viewBox="0 0 427 398" xmlns="http://www.w3.org/2000/svg">
 
@@ -170,7 +170,7 @@ rel="stylesheet">
 </a>
 
 
-        <nav class="nav">
+        <nav class="nav" aria-label="Navegación principal">
 
             <a href="#framework" class="nav__link">
                 Método
@@ -197,14 +197,19 @@ rel="stylesheet">
 
 
 
-        <a href="#booking" class="button button--primary">
+        <a href="#booking" class="button button--primary header__cta">
             Agendar consulta
         </a>
 
 
 
 
-        <button class="menu-button" aria-label="Open menu">
+        <button
+            class="menu-button"
+            type="button"
+            aria-label="Abrir menú"
+            aria-controls="mobile-menu"
+            aria-expanded="false">
 
             <span></span>
 
@@ -225,7 +230,7 @@ rel="stylesheet">
     <!-- MOBILE FULLSCREEN MENU -->
 
 
-    <div class="mobile-menu">
+    <div class="mobile-menu" id="mobile-menu" aria-label="Menú móvil">
 
 
         <nav class="mobile-menu__nav">
@@ -257,7 +262,6 @@ rel="stylesheet">
 
 
         </nav>
-
 
     </div>
 
@@ -508,12 +512,11 @@ para conseguir más clientes.
         </p>
 
         <h2 class="section-head__title">
-            Una metodología para construir marcas que crecen.
+            Un sistema para construir negocios que crecen
         </h2>
 
         <p class="section-head__text">
-            Cada proyecto sigue un sistema diseñado para generar claridad,
-            posicionamiento y crecimiento sostenible.
+            Combinamos comunicación, identidad, método y acción para convertir la estrategia en crecimiento sostenible.
         </p>
 
         <ul class="framework-list">
@@ -602,11 +605,13 @@ para conseguir más clientes.
 
     <aside class="founder-card">
 
+        <div class="founder-card__media">
+
         <img
-        src="/src/assets/images/Laritaa.webp"
+        src="/src/assets/images/Lara-photo.webp"
         alt="Fundadora de CIMA">
 
-        <div class="founder-body">
+        <div class="founder-card__media-content">
 
             <span>
                 SOBRE LA FUNDADORA
@@ -616,7 +621,13 @@ para conseguir más clientes.
                 La historia de CIMA
             </h3>
 
-            <p>
+        </div>
+
+        </div>
+
+        <div class="founder-body">
+
+            <p class="founder-body__lead">
 
                 CIMA nació con una idea simple:
                 una marca puede tener un gran producto,
@@ -625,10 +636,10 @@ para conseguir más clientes.
 
             </p>
 
-            <p>
+            <p class="founder-body__text">
 
                 Mi formación en Comunicación y una
-                Maestría en la Universidad de Tucumán
+                licenciatura en la Universidad de Tucumán
                 me permitieron desarrollar un sistema
                 donde estrategia, branding y análisis
                 trabajan juntos.
