@@ -7,10 +7,28 @@ import '/src/css/style.css';
 const faqItems = document.querySelectorAll(".faq__item");
 
 
-faqItems.forEach(item => {
+faqItems.forEach((item, index) => {
 
     const question = item.querySelector(".faq__question");
     const answer = item.querySelector(".faq__answer");
+
+
+
+    question.type = "button";
+
+    question.id = `faq-question-${index + 1}`;
+
+    question.setAttribute("aria-expanded", "false");
+
+    question.setAttribute("aria-controls", `faq-answer-${index + 1}`);
+
+    answer.id = `faq-answer-${index + 1}`;
+
+    answer.setAttribute("role", "region");
+
+    answer.setAttribute("aria-labelledby", question.id);
+
+    answer.setAttribute("aria-hidden", "true");
 
 
     question.addEventListener("click", () => {
@@ -26,7 +44,13 @@ faqItems.forEach(item => {
 
             const otherAnswer = otherItem.querySelector(".faq__answer");
 
+            const otherQuestion = otherItem.querySelector(".faq__question");
+
             otherAnswer.style.maxHeight = null;
+
+            otherQuestion.setAttribute("aria-expanded", "false");
+
+            otherAnswer.setAttribute("aria-hidden", "true");
 
         });
 
@@ -35,6 +59,10 @@ faqItems.forEach(item => {
         if(!isActive){
 
             item.classList.add("active");
+
+            question.setAttribute("aria-expanded", "true");
+
+            answer.setAttribute("aria-hidden", "false");
 
             answer.style.maxHeight =
             answer.scrollHeight + "px";
