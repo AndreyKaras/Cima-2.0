@@ -43,13 +43,6 @@ rel="stylesheet">
 
     <!-- Favicon -->
 
-    <link 
-        rel="icon" 
-        type="image/png" 
-        href="assets/images/favicon.png"
-    >
-
-
     <!-- Open Graph -->
 
     <meta property="og:type" content="website">
@@ -108,15 +101,12 @@ rel="stylesheet">
 
 
     <link 
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" 
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
         rel="stylesheet"
     >
 
 
     <!-- CSS -->
-
-    <link rel="stylesheet" href="css/style.css">
-
 
     <script type="application/ld+json">
 
@@ -167,7 +157,7 @@ rel="stylesheet">
 
        <a href="#" class="logo" aria-label="CIMA" alt="CIMA">
 
-    <svg class="logo__icon" viewBox="0 0 427 398" xmlns="http://www.w3.org/2000/svg">
+    <svg class="logo__icon" width="48" height="45" viewBox="0 0 427 398" xmlns="http://www.w3.org/2000/svg">
 
         <path class="logo-main" d="M333.6 325.6q-22.4 17.6-53.6 28T217.6 364q-54.4 0-95.2-21.6t-64-60Q36 243.2 36 190.4t24-92q24.8-39.2 64-60 40-21.6 85.6-21.6 40 0 71.2 11.2 32 11.2 54.4 30.4l-36.8 48q-14.4-11.2-35.2-20T216 77.6q-28.8 0-53.6 15.2-24 14.4-38.4 40-13.6 25.6-13.6 57.6 0 30.4 14.4 56.8 14.4 25.6 40 40.8 25.6 14.4 58.4 14.4 21.6 0 39.2-6.4 18.4-6.4 32.8-17.6z"/>
 
@@ -1233,7 +1223,7 @@ para conseguir más clientes.
 
           <img
             src="./src/assets/images/business-cover.jpg"
-            alt="Business Consulting
+            alt="Business Consulting"
             loading="lazy"
     width="800"
     height="600"">
@@ -1256,6 +1246,7 @@ para conseguir más clientes.
 
           <a
             href="./cases/business.html"
+  
             class="case-card__link">
             Ver caso completo →
           </a>
@@ -1513,7 +1504,25 @@ para conseguir más clientes.
 
             </div>
 
-            <form class="contact__form">
+            <form class="contact__form" id="contact-form" novalidate>
+
+                <div class="contact__form-header">
+
+                    <p class="contact__form-eyebrow">
+                        CONSULTA INICIAL
+                    </p>
+
+                    <h3 class="contact__form-title">
+                        Cuéntanos qué necesitas
+                    </h3>
+
+                    <p class="contact__form-description">
+                        Completa el formulario y te responderemos lo antes posible.
+                    </p>
+
+                </div>
+
+                <div class="contact__field-row">
 
                 <div class="contact__field">
 
@@ -1524,7 +1533,13 @@ para conseguir más clientes.
                     <input
                         id="name"
                         type="text"
-                        placeholder="Tu nombre">
+                        name="name"
+                        placeholder="Tu nombre"
+                        autocomplete="name"
+                        required
+                        aria-describedby="name-error">
+
+                    <p class="contact__field-error" id="name-error" aria-live="polite"></p>
 
                 </div>
 
@@ -1537,20 +1552,43 @@ para conseguir más clientes.
                     <input
                         id="email"
                         type="email"
-                        placeholder="correo@email.com">
+                        name="email"
+                        placeholder="correo@email.com"
+                        autocomplete="email"
+                        required
+                        aria-describedby="email-error">
+
+                    <p class="contact__field-error" id="email-error" aria-live="polite"></p>
 
                 </div>
 
                 <div class="contact__field">
 
-                    <label for="company">
-                        Empresa
+                    <label for="category">
+                        Área de interés
                     </label>
 
-                    <input
-                        id="company"
-                        type="text"
-                        placeholder="Nombre de la empresa">
+                    <select
+                        id="category"
+                        name="category"
+                        required
+                        aria-describedby="category-error">
+
+                        <option value="" selected disabled>
+                            Selecciona una opción
+                        </option>
+
+                        <option value="Estrategia">Estrategia</option>
+                        <option value="Procesos">Procesos</option>
+                        <option value="Ventas">Ventas</option>
+                        <option value="Marketing">Marketing</option>
+                        <option value="Otro">Otro</option>
+
+                    </select>
+
+                    <p class="contact__field-error" id="category-error" aria-live="polite"></p>
+
+                </div>
 
                 </div>
 
@@ -1562,14 +1600,23 @@ para conseguir más clientes.
 
                     <textarea
                         id="message"
+                        name="message"
                         rows="6"
-                        placeholder="Describe brevemente tu objetivo..."></textarea>
+                        placeholder="Describe brevemente tu objetivo..."
+                        required
+                        aria-describedby="message-error"></textarea>
+
+                    <p class="contact__field-error" id="message-error" aria-live="polite"></p>
 
                 </div>
 
                 <button class="button button--primary" type="submit">
-                    Enviar solicitud
+                    <span class="contact__submit-label">
+                        Enviar solicitud
+                    </span>
                 </button>
+
+                <p class="contact__form-status" role="status" aria-live="polite" hidden></p>
 
             </form>
 
@@ -1624,6 +1671,7 @@ para conseguir más clientes.
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script type="module" src="./src/js/main.js" defer></script>
 
 </body>

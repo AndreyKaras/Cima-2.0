@@ -420,6 +420,8 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
 
 const header = document.querySelector(".header");
 
+const logo = document.querySelector(".logo");
+
 
 window.addEventListener("scroll", ()=>{
 
@@ -584,6 +586,204 @@ if(logo){
 
         });
 
+
+    });
+
+}
+
+// =======================
+// CONTACT FORM
+// =======================
+
+const contactForm = document.querySelector("#contact-form");
+
+const emailJsConfig = {
+    publicKey: "kznunU3tJkXsbyvxr",
+    serviceId: "service_zd1da7s",
+    templateId: "template_kjv7cy2"
+};
+
+
+
+function setFieldError(field, message){
+
+    const fieldWrapper = field.closest(".contact__field");
+
+    const errorElement = document.querySelector(`#${field.id}-error`);
+
+
+
+    if(!fieldWrapper || !errorElement){
+
+        return;
+
+    }
+
+
+
+    fieldWrapper.classList.toggle("is-invalid", Boolean(message));
+
+    field.setAttribute("aria-invalid", String(Boolean(message)));
+
+    errorElement.textContent = message;
+
+}
+
+
+
+function getFieldError(field){
+
+    if(!field.value.trim()){
+
+        return "Este campo es obligatorio.";
+
+    }
+
+
+
+    if(field.type === "email" && !field.validity.valid){
+
+        return "Introduce un correo electrónico válido.";
+
+    }
+
+
+
+    return "";
+
+}
+
+
+
+function setFormStatus(statusElement, state, message){
+
+    statusElement.dataset.state = state;
+
+    statusElement.textContent = message;
+
+    statusElement.hidden = false;
+
+}
+
+
+
+if(contactForm){
+
+    const contactFields = contactForm.querySelectorAll("input, textarea, select");
+
+    const submitButton = contactForm.querySelector("button[type=\"submit\"]");
+
+    const submitLabel = contactForm.querySelector(".contact__submit-label");
+
+    const formStatus = contactForm.querySelector(".contact__form-status");
+
+
+
+    contactFields.forEach(field => {
+
+        field.addEventListener("input", () => {
+
+            setFieldError(field, getFieldError(field));
+
+        });
+
+
+
+        field.addEventListener("change", () => {
+
+            setFieldError(field, getFieldError(field));
+
+        });
+
+    });
+
+
+
+    if(typeof emailjs !== "undefined"){
+
+        emailjs.init({ publicKey: emailJsConfig.publicKey });
+
+    }
+
+
+
+    contactForm.addEventListener("submit", async event => {
+
+        event.preventDefault();
+
+
+
+        const hasErrors = Array.from(contactFields).some(field => {
+
+            const errorMessage = getFieldError(field);
+
+            setFieldError(field, errorMessage);
+
+            return Boolean(errorMessage);
+
+        });
+
+
+
+        if(hasErrors){
+
+            setFormStatus(formStatus, "error", "Revisa los campos marcados antes de enviar.");
+
+            return;
+
+        }
+
+
+
+        if(typeof emailjs === "undefined"){
+
+            setFormStatus(formStatus, "error", "No se pudo cargar el servicio de envío. Inténtalo de nuevo más tarde.");
+
+            return;
+
+        }
+
+
+
+        submitButton.disabled = true;
+
+        submitButton.setAttribute("aria-busy", "true");
+
+        submitLabel.textContent = "Enviando…";
+
+        formStatus.hidden = true;
+
+
+
+        try {
+
+            await emailjs.sendForm(
+                emailJsConfig.serviceId,
+                emailJsConfig.templateId,
+                contactForm
+            );
+
+
+
+            contactForm.reset();
+
+            contactFields.forEach(field => setFieldError(field, ""));
+
+            setFormStatus(formStatus, "success", "¡Gracias! Hemos recibido tu solicitud y te responderemos pronto.");
+
+        } catch(error){
+
+            setFormStatus(formStatus, "error", "No pudimos enviar tu solicitud. Inténtalo de nuevo en unos minutos.");
+
+        } finally {
+
+            submitButton.disabled = false;
+
+            submitButton.removeAttribute("aria-busy");
+
+            submitLabel.textContent = "Enviar solicitud";
+
+        }
 
     });
 
