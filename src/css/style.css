@@ -16,15 +16,13 @@
 @import "./sections/services.css";
 @import "./sections/process.css";
 @import "./sections/cases.css";
+@import "./sections/testimonials.css";
 @import "./sections/booking.css";
 @import "./sections/faq.css";
 @import "./sections/contact.css";
 
 
 @import "./components/button.css";
-@import "./components/card.css";
-@import "./components/form.css";
-@import "./components/calendar.css";
 @import "./components/mobile-menu.css";
 @import "./components/logo.css";
 

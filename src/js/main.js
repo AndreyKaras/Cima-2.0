@@ -1,5 +1,3 @@
-import '/src/css/style.css';
-
 // =======================
 // FAQ ACCORDION
 // =======================
@@ -614,6 +612,103 @@ if(logo){
 
 
     });
+
+}
+
+
+// =======================
+// TESTIMONIALS SLIDER
+// =======================
+
+const initTestimonialsSlider = () => {
+
+    if(!window.Swiper) return;
+
+    const testimonialsCarousel = document.querySelector(".testimonials__carousel");
+
+    if(!testimonialsCarousel || testimonialsCarousel.classList.contains("swiper-initialized")){
+
+        return;
+
+    }
+
+    const testimonialsShell = testimonialsCarousel.closest(".testimonials__slider-shell");
+    const nextButton = testimonialsShell?.querySelector("[data-testimonial-next]");
+    const previousButton = testimonialsShell?.querySelector("[data-testimonial-prev]");
+    const pagination = testimonialsShell?.querySelector(".testimonials__dots");
+
+    new window.Swiper(testimonialsCarousel, {
+
+        slidesPerView:1,
+
+        spaceBetween:0,
+
+        loop:true,
+
+        speed:550,
+
+        grabCursor:true,
+
+        autoHeight:true,
+
+        observer:true,
+
+        observeParents:true,
+
+        watchSlidesProgress:true,
+
+        keyboard:{
+
+            enabled:true,
+
+            onlyInViewport:true
+
+        },
+
+        navigation:{
+
+            nextEl:nextButton,
+
+            prevEl:previousButton
+
+        },
+
+        pagination:{
+
+            el:pagination,
+
+            clickable:true,
+
+            bulletClass:"testimonials__dot",
+
+            bulletActiveClass:"is-active"
+
+        },
+
+        a11y:{
+
+            enabled:true,
+
+            prevSlideMessage:"Testimonio anterior",
+
+            nextSlideMessage:"Siguiente testimonio",
+
+            paginationBulletMessage:"Ir al testimonio {{index}}"
+
+        }
+
+    });
+
+};
+
+
+if(window.Swiper){
+
+    initTestimonialsSlider();
+
+} else {
+
+    window.addEventListener("load", initTestimonialsSlider, { once:true });
 
 }
 
