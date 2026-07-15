@@ -141,8 +141,8 @@ rel="stylesheet">
 
 
     "sameAs": [
-        "https://instagram.com/[tu-instagram]",
-        "https://linkedin.com/company/[tu-linkedin]"
+        "https://www.instagram.com/",
+        "https://www.facebook.com/"
     ]
 
 }
@@ -150,7 +150,7 @@ rel="stylesheet">
 </script>
 
 </head>
-  <body>
+  <body id="top">
 
 <header class="header">
 
@@ -265,6 +265,45 @@ rel="stylesheet">
 
 
         </nav>
+
+        <div class="mobile-menu__socials" aria-label="Redes sociales">
+            <!-- Sustituir por el enlace directo de WhatsApp cuando esté disponible. -->
+            <a
+                class="mobile-menu__social-item"
+                href="https://www.whatsapp.com/"
+                target="_blank"
+                rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4.1A8 8 0 1 1 20 11.5Z"></path>
+                    <path d="M8.8 8.2c.4 2.8 2.2 4.7 5 5.2"></path>
+                    <path d="m8.9 8.2.8-.4 1 1.7-.6.7"></path>
+                    <path d="m13.8 13.4.5-.8 1.8.8-.2.9"></path>
+                </svg>
+                WhatsApp
+            </a>
+            <a
+                class="mobile-menu__social-item"
+                href="https://www.instagram.com/cima.estudioo/"
+                target="_blank"
+                rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                    <circle cx="12" cy="12" r="4"></circle>
+                    <circle cx="17.5" cy="6.5" r="1"></circle>
+                </svg>
+                Instagram
+            </a>
+            <a
+                class="mobile-menu__social-item"
+                href="https://www.facebook.com/"
+                target="_blank"
+                rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M14.5 21v-8h2.8l.5-3h-3.3V8.1c0-.9.3-1.6 1.7-1.6H18V3.8c-.6-.1-1.5-.2-2.6-.2-2.7 0-4.5 1.6-4.5 4.6V10H8v3h2.9v8h3.6Z"></path>
+                </svg>
+                Facebook
+            </a>
+        </div>
 
     </div>
 
@@ -1287,7 +1326,7 @@ para conseguir más clientes.
 </section>
 
 
-<section class="testimonials" aria-labelledby="testimonials-title">
+<section class="testimonials" id="testimonials" aria-labelledby="testimonials-title">
 
   <div class="container">
 
@@ -1780,6 +1819,24 @@ para conseguir más clientes.
 
                 <p class="contact__form-status" role="status" aria-live="polite" hidden></p>
 
+                <p class="contact__direct">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+                        <path d="m4 7 8 6 8-6"></path>
+                    </svg>
+                    <span class="contact__direct-copy">
+                        <span>¿Prefieres escribirnos directamente?</span>
+                        <span class="contact__direct-links">
+                            <a href="mailto:info@cima.com">Email</a>
+                            <span aria-hidden="true">·</span>
+                            <a
+                                href="https://www.whatsapp.com/"
+                                target="_blank"
+                                rel="noopener noreferrer">WhatsApp</a>
+                        </span>
+                    </span>
+                </p>
+
             </form>
 
         </div>
@@ -1793,40 +1850,127 @@ para conseguir más clientes.
 
 </main>
 <footer class="footer">
-    <div class="footer-container">
 
-        <div class="footer-brand">
-            <h3>CIMA</h3>
-            <p>Business Growth System</p>
+    <div class="footer__container">
+
+        <div class="footer__cta">
+            <div>
+                <p class="footer__eyebrow">EL SIGUIENTE PASO</p>
+                <h2 class="footer__cta-title">
+                    Una dirección clara puede cambiar todo.
+                </h2>
+            </div>
+
+            <!-- Sustituir por el enlace directo de WhatsApp cuando esté disponible. -->
+            <a
+                class="footer__cta-link"
+                href="https://www.whatsapp.com/"
+                target="_blank"
+                rel="noopener noreferrer">
+                <span>Conversemos</span>
+                <strong>Hablar por WhatsApp</strong>
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4.1A8 8 0 1 1 20 11.5Z"></path>
+                    <path d="M8.8 8.2c.4 2.8 2.2 4.7 5 5.2"></path>
+                    <path d="m8.9 8.2.8-.4 1 1.7-.6.7"></path>
+                    <path d="m13.8 13.4.5-.8 1.8.8-.2.9"></path>
+                </svg>
+            </a>
         </div>
 
-        <div class="footer-links">
-            <div class="footer-column">
-                <h4>Método</h4>
-                <a href="#framework">Framework</a>
-                <a href="#process">Proceso</a>
-                <a href="#cases">Casos</a>
+        <div class="footer__main">
+            <div class="footer__brand">
+                <a class="footer__logo" href="#top" aria-label="CIMA — volver al inicio">
+                    <img src="./src/assets/images/logo/logo-white.svg" alt="" width="64" height="57">
+                    <span class="footer__identity">
+                        <strong>CIMA</strong>
+                        <span>Business Growth System</span>
+                    </span>
+                </a>
             </div>
 
-            <div class="footer-column">
-                <h4>Servicios</h4>
-                <a href="#services">Consultoría</a>
-                <a href="#booking">Consulta estratégica</a>
-            </div>
+            <nav class="footer__navigation" aria-label="Navegación del pie de página">
+                <div class="footer__column">
+                    <h3>Explorar</h3>
+                    <a href="#framework">Sistema CIMA</a>
+                    <a href="#services">Soluciones</a>
+                    <a href="#process">Proceso</a>
+                    <a href="#cases">Casos</a>
+                </div>
 
-            <div class="footer-column">
-                <h4>Contacto</h4>
-                <a href="#contact">Email</a>
-                <a href="#contact">WhatsApp</a>
-                <a href="#contact">Instagram</a>
-            </div>
+                <div class="footer__column">
+                    <h3>Decidir</h3>
+                    <a href="#testimonials">Testimonios</a>
+                    <a href="#booking">Consulta inicial</a>
+                    <a href="#faq">Preguntas frecuentes</a>
+                    <a href="#contact">Contacto</a>
+                </div>
+
+                <div class="footer__column footer__column--contact">
+                    <h3>Conectar</h3>
+                    <a href="mailto:info@cima.com" class="footer__contact-item">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+                            <path d="m4 7 8 6 8-6"></path>
+                        </svg>
+                        info@cima.com
+                    </a>
+                    <!-- Sustituir estas URL por los perfiles definitivos. -->
+                    <a
+                        href="https://www.whatsapp.com/"
+                        class="footer__contact-item"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4.1A8 8 0 1 1 20 11.5Z"></path>
+                            <path d="M8.8 8.2c.4 2.8 2.2 4.7 5 5.2"></path>
+                            <path d="m8.9 8.2.8-.4 1 1.7-.6.7"></path>
+                            <path d="m13.8 13.4.5-.8 1.8.8-.2.9"></path>
+                        </svg>
+                        WhatsApp
+                    </a>
+                    <a
+                        href="https://www.instagram.com/cima.estudioo/"
+                        class="footer__contact-item"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                            <circle cx="12" cy="12" r="4"></circle>
+                            <circle cx="17.5" cy="6.5" r="1"></circle>
+                        </svg>
+                        Instagram
+                    </a>
+                    <a
+                        href="https://www.facebook.com/"
+                        class="footer__contact-item"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M14.5 21v-8h2.8l.5-3h-3.3V8.1c0-.9.3-1.6 1.7-1.6H18V3.8c-.6-.1-1.5-.2-2.6-.2-2.7 0-4.5 1.6-4.5 4.6V10H8v3h2.9v8h3.6Z"></path>
+                        </svg>
+                        Facebook
+                    </a>
+                </div>
+            </nav>
+        </div>
+
+        <div class="footer__wordmark" aria-hidden="true">CIMA</div>
+
+        <div class="footer__bottom">
+            <p>© 2026 CIMA. Todos los derechos reservados.</p>
+            <p>Tucumán · Argentina</p>
+            <a href="#top">
+                Volver arriba
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="m7 11 5-5 5 5"></path>
+                    <path d="M12 6v12"></path>
+                </svg>
+            </a>
         </div>
 
     </div>
 
-    <div class="footer-bottom">
-        <p>© 2026 CIMA. All rights reserved.</p>
-    </div>
 </footer>
 
 
