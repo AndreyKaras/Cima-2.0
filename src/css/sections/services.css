@@ -347,16 +347,16 @@
 
         justify-self:end;
 
-        max-width:370px;
+        max-width:320px;
 
-        padding:var(--space-2) var(--space-3);
+        padding:18px 20px;
 
     }
 
 
     .services__details-label {
 
-        margin-bottom:var(--space-2);
+        margin-bottom:10px;
 
     }
 
@@ -370,7 +370,7 @@
 
     .services__features li {
 
-        padding-block:14px;
+        padding-block:10px;
 
         border-bottom:1px solid rgba(30,58,138,.1);
 
@@ -395,7 +395,7 @@
 
     .services__features li:not(:first-child)::before {
 
-        top:calc(14px + .7em);
+        top:calc(10px + .7em);
 
     }
 

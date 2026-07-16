@@ -199,146 +199,129 @@ heroTimeline
 // HERO DASHBOARD FLOAT
 // =======================
 
-const isDesktop = window.innerWidth >= 1100;
-
-
-if(isDesktop){
-gsap.to(".dashboard-card--main",{
-
-    y:-10,
-
-    rotation:.4,
-
-    duration:7,
-
-    repeat:-1,
-
-    yoyo:true,
-
-    ease:"sine.inOut"
-
-});
-
-
-
-gsap.to(".dashboard-card--metric",{
-
-    y:-12,
-
-    rotation:1,
-
-    duration:6,
-
-    repeat:-1,
-
-    yoyo:true,
-
-    ease:"sine.inOut"
-
-});
-
-
-
-
-gsap.to(".dashboard-card--progress",{
-
-    y:8,
-
-    rotation:-1,
-
-    duration:8,
-
-    repeat:-1,
-
-    yoyo:true,
-
-    ease:"sine.inOut"
-
-});
-
-
-}
-
-
-// =======================
-// MOUSE PARALLAX
-// =======================
-
-//
-// HERO DASHBOARD MOUSE PARALLAX
-//
-
 const heroDashboard = document.querySelector(".hero-dashboard");
+const heroMotion = gsap.matchMedia();
 
 
-if(heroDashboard){
+heroMotion.add(
+    "(min-width: 1100px) and (prefers-reduced-motion: no-preference)",
+    ()=>{
 
-    gsap.set(heroDashboard,{
-        transformPerspective:1500
-    });
+        if(!heroDashboard) return;
 
-    heroDashboard.addEventListener("mousemove", (e)=>{
+        const floatTweens = [
+            gsap.to(".dashboard-card--main",{
+                y:-7,
+                rotation:.25,
+                duration:7,
+                repeat:-1,
+                yoyo:true,
+                ease:"sine.inOut",
+                paused:true
+            }),
+            gsap.to(".dashboard-card--metric",{
+                y:-8,
+                rotation:.5,
+                duration:6.5,
+                repeat:-1,
+                yoyo:true,
+                ease:"sine.inOut",
+                paused:true
+            }),
+            gsap.to(".dashboard-card--progress",{
+                y:6,
+                rotation:-.5,
+                duration:8,
+                repeat:-1,
+                yoyo:true,
+                ease:"sine.inOut",
+                paused:true
+            })
+        ];
 
-
-        const rect = heroDashboard.getBoundingClientRect();
-
-
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-
-
-
-const moveX = (x - rect.width / 2) / 45;
-const moveY = (y - rect.height / 2) / 45;
-
-
-
-        gsap.to(heroDashboard,{
-
-            rotateY: moveX,
-
-            rotateX: -moveY,
-
-            duration:1.4,
-
-            ease:"power3.out",
-
-            transformPerspective:1000
-
+        const routeProgress = heroDashboard.querySelector(".dashboard-route span");
+        const rotateXTo = gsap.quickTo(heroDashboard,"rotateX",{
+            duration:.5,
+            ease:"power2.out"
+        });
+        const rotateYTo = gsap.quickTo(heroDashboard,"rotateY",{
+            duration:.5,
+            ease:"power2.out"
         });
 
+        let dashboardRect;
+        let heroIsVisible = true;
+        let introIsComplete = heroTimeline.progress() === 1;
 
+        const setFloatState = isActive=>{
+            floatTweens.forEach(tween=>{
+                if(isActive && introIsComplete){
+                    tween.play();
+                } else {
+                    tween.pause();
+                }
+            });
 
-        
+            if(routeProgress){
+                routeProgress.style.animationPlayState = isActive ? "running" : "paused";
+            }
+        };
 
-
-    });
-
-
-
-
-
-    heroDashboard.addEventListener("mouseleave",()=>{
-
-
-        gsap.to(heroDashboard,{
-
-            rotateY:0,
-
-            rotateX:0,
-
-            duration:1.8,
-
-            ease:"power3.out"
-
+        const visibilityTrigger = ScrollTrigger.create({
+            trigger:".hero",
+            start:"top bottom",
+            end:"bottom top",
+            onToggle:self=>{
+                heroIsVisible = self.isActive;
+                setFloatState(heroIsVisible);
+            }
         });
 
+        heroTimeline.eventCallback("onComplete",()=>{
+            introIsComplete = true;
+            setFloatState(heroIsVisible);
+        });
 
-    });
+        setFloatState(heroIsVisible);
 
+        const updateDashboardRect = ()=>{
+            dashboardRect = heroDashboard.getBoundingClientRect();
+        };
 
+        const handlePointerMove = event=>{
+            if(!dashboardRect) updateDashboardRect();
 
-}
+            const x = event.clientX - dashboardRect.left;
+            const y = event.clientY - dashboardRect.top;
+            const moveX = (x - dashboardRect.width / 2) / 65;
+            const moveY = (y - dashboardRect.height / 2) / 65;
+
+            rotateYTo(moveX);
+            rotateXTo(-moveY);
+        };
+
+        const resetDashboard = ()=>{
+            dashboardRect = undefined;
+            rotateYTo(0);
+            rotateXTo(0);
+        };
+
+        heroDashboard.addEventListener("pointerenter",updateDashboardRect);
+        heroDashboard.addEventListener("pointermove",handlePointerMove,{ passive:true });
+        heroDashboard.addEventListener("pointerleave",resetDashboard);
+
+        return ()=>{
+            visibilityTrigger.kill();
+            floatTweens.forEach(tween=>tween.kill());
+            heroDashboard.removeEventListener("pointerenter",updateDashboardRect);
+            heroDashboard.removeEventListener("pointermove",handlePointerMove);
+            heroDashboard.removeEventListener("pointerleave",resetDashboard);
+            heroTimeline.eventCallback("onComplete",null);
+            gsap.set(heroDashboard,{ clearProps:"rotateX,rotateY" });
+        };
+
+    }
+);
 
 // =======================
 // SECTION REVEAL
@@ -856,9 +839,15 @@ function setFieldError(field, message){
 
 function getFieldError(field){
 
-    if(!field.value.trim()){
+    if(field.required && !field.value.trim()){
 
         return "Este campo es obligatorio.";
+
+    }
+
+    if(!field.value.trim()){
+
+        return "";
 
     }
 
