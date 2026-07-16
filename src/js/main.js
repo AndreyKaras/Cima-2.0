@@ -165,7 +165,31 @@ heroTimeline
 
     ease:"power3.out"
 
-},"-=0.8");
+},"-=0.8")
+
+
+.from(".dashboard-system > span",{
+
+    opacity:0,
+
+    scale:.7,
+
+    stagger:.08,
+
+    duration:.45
+
+},"-=0.45")
+
+
+.from(".dashboard-system > i",{
+
+    scaleX:0,
+
+    stagger:.08,
+
+    duration:.4
+
+},"-=0.4");
 
 
 
@@ -429,6 +453,12 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
 
             e.preventDefault();
 
+            if(document.body.classList.contains("menu-open")){
+
+                closeMenu();
+
+            }
+
             target.scrollIntoView({
                 behavior:"smooth",
                 block:"start"
@@ -449,21 +479,24 @@ const header = document.querySelector(".header");
 const logo = document.querySelector(".logo");
 
 
-window.addEventListener("scroll", ()=>{
+const updateHeaderScrollState = ()=>{
+
+    if(!header) return;
+
+    const fullScreenMenuIsOpen =
+        document.body.classList.contains("menu-open") &&
+        window.innerWidth <= 767;
+
+    if(fullScreenMenuIsOpen) return;
+
+    header.classList.toggle("scrolled",window.scrollY > 50);
+
+};
 
 
-    if(window.scrollY > 50){
+window.addEventListener("scroll",updateHeaderScrollState);
 
-        header.classList.add("scrolled");
-
-    } else {
-
-        header.classList.remove("scrolled");
-
-    }
-
-
-});
+updateHeaderScrollState();
 
 // =======================
 // MOBILE MENU
@@ -476,9 +509,26 @@ const mobileMenu = document.querySelector(".mobile-menu");
 
 const mobileLinks = document.querySelectorAll(".mobile-menu__link");
 
+const fullScreenMenuMedia = window.matchMedia("(max-width: 767px)");
+
+const desktopMenuMedia = window.matchMedia("(min-width: 1100px)");
+
+let menuOpenedAtScrollPosition = window.scrollY;
+
 
 
 function openMenu(){
+
+    if(fullScreenMenuMedia.matches){
+
+        menuOpenedAtScrollPosition = window.scrollY;
+
+        header.classList.toggle(
+            "scrolled",
+            menuOpenedAtScrollPosition > 50
+        );
+
+    }
 
     menuButton.classList.add("active");
 
@@ -486,17 +536,43 @@ function openMenu(){
 
     document.body.classList.add("menu-open");
 
+    menuButton.setAttribute("aria-expanded","true");
+
+    menuButton.setAttribute("aria-label","Cerrar menú");
+
+    mobileMenu.setAttribute("aria-hidden","false");
+
 }
 
 
 
 function closeMenu(){
 
+    const preserveHeaderState =
+        fullScreenMenuMedia.matches &&
+        menuOpenedAtScrollPosition > 50;
+
     menuButton.classList.remove("active");
 
     mobileMenu.classList.remove("active");
 
     document.body.classList.remove("menu-open");
+
+    menuButton.setAttribute("aria-expanded","false");
+
+    menuButton.setAttribute("aria-label","Abrir menú");
+
+    mobileMenu.setAttribute("aria-hidden","true");
+
+    if(fullScreenMenuMedia.matches){
+
+        header.classList.toggle("scrolled",preserveHeaderState);
+
+    } else {
+
+        updateHeaderScrollState();
+
+    }
 
 }
 
@@ -582,10 +658,35 @@ if(menuButton && mobileMenu){
 
             closeMenu();
 
+            menuButton.focus();
+
         }
 
 
     });
+
+
+    const closeMenuAfterViewportChange = ()=>{
+
+        if(mobileMenu.classList.contains("active")){
+
+            closeMenu();
+
+        }
+
+    };
+
+
+    fullScreenMenuMedia.addEventListener(
+        "change",
+        closeMenuAfterViewportChange
+    );
+
+
+    desktopMenuMedia.addEventListener(
+        "change",
+        closeMenuAfterViewportChange
+    );
 
 
 }
@@ -765,7 +866,7 @@ function getFieldError(field){
 
     if(field.type === "email" && !field.validity.valid){
 
-        return "Introduce un correo electrónico válido.";
+        return "Ingresá un correo electrónico válido.";
 
     }
 
@@ -849,7 +950,7 @@ if(contactForm){
 
         if(hasErrors){
 
-            setFormStatus(formStatus, "error", "Revisa los campos marcados antes de enviar.");
+            setFormStatus(formStatus, "error", "Revisá los campos marcados antes de enviar.");
 
             return;
 
@@ -859,7 +960,7 @@ if(contactForm){
 
         if(typeof emailjs === "undefined"){
 
-            setFormStatus(formStatus, "error", "No se pudo cargar el servicio de envío. Inténtalo de nuevo más tarde.");
+            setFormStatus(formStatus, "error", "No se pudo cargar el servicio de envío. Intentá de nuevo más tarde.");
 
             return;
 
@@ -874,7 +975,6 @@ if(contactForm){
         submitLabel.textContent = "Enviando…";
 
         formStatus.hidden = true;
-
 
 
         try {
@@ -895,7 +995,7 @@ if(contactForm){
 
         } catch(error){
 
-            setFormStatus(formStatus, "error", "No pudimos enviar tu solicitud. Inténtalo de nuevo en unos minutos.");
+            setFormStatus(formStatus, "error", "No pudimos enviar tu solicitud. Intentá de nuevo en unos minutos.");
 
         } finally {
 
@@ -903,7 +1003,7 @@ if(contactForm){
 
             submitButton.removeAttribute("aria-busy");
 
-            submitLabel.textContent = "Enviar solicitud";
+            submitLabel.textContent = "Solicitar consulta";
 
         }
 

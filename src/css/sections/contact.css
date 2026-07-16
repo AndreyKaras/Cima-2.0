@@ -574,19 +574,6 @@
 }
 
 
-.contact__direct-links {
-
-    display:inline-flex;
-
-    align-items:baseline;
-
-    gap:6px;
-
-    white-space:nowrap;
-
-}
-
-
 .contact__direct a {
 
     color:var(--color-primary);
